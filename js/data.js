@@ -61,6 +61,18 @@ window.BPSCData = {
 
       // Explainer Panel
       explainerTitle: "💡 Why are GS-2 Marks Comparatively Low? (GS-1 vs GS-2 Analysis)",
+      explainerGs1Title: "GS Paper 1 (High Scoring Potential)",
+      explainerGs1Point1: "Contains a 72-mark Statistics/DI section where candidates can easily score a perfect 72/72.",
+      explainerGs1Point2: "History topics (Maurya Art, Pala Art, Patna Qalam, Tribal uprisings) are highly repetitive and predictable.",
+      explainerGs1Point3: "High scores usually cluster around 180-195 marks.",
+      explainerGs2Title: "GS Paper 2 (Strict Evaluation)",
+      explainerGs2Point1: "Entirely subjective paper containing Indian Polity, Economy/Geography of Bihar, and Science & Tech.",
+      explainerGs2Point2: "Polity and Economic responses are evaluated strictly, requiring critical analysis, articles, and recommendations (Punchhi, Sarkaria).",
+      explainerGs2Point3: "Top scores rarely exceed 155-162 marks. Even a score of 140+ is considered excellent.",
+
+      // Proverbs Card Labels
+      proverbMeaningLabel: "Meaning",
+      proverbContextLabel: "Context",
 
       // Target Calculator
       topperCalcTitle: "🎯 Topper's Target Score Blueprint Calculator",
@@ -133,6 +145,18 @@ window.BPSCData = {
 
       // Explainer Panel
       explainerTitle: "💡 GS-2 में अंक तुलनात्मक रूप से कम क्यों आते हैं? (GS-1 बनाम GS-2 विश्लेषण)",
+      explainerGs1Title: "GS प्रश्नपत्र 1 (अधिकतम स्कोरिंग क्षमता)",
+      explainerGs1Point1: "इसमें 72 अंकों का सांख्यिकी (DI) खंड होता है, जहां उम्मीदवार आसानी से पूर्ण 72/72 अंक प्राप्त कर सकते हैं।",
+      explainerGs1Point2: "इतिहास के विषय (मौर्य कला, पाल कला, पटना कलम, जनजातीय विद्रोह) अत्यधिक दोहराव वाले और अनुमानित होते हैं।",
+      explainerGs1Point3: "उच्च स्कोर आमतौर पर 180-195 अंकों के आसपास केंद्रित होते हैं।",
+      explainerGs2Title: "GS प्रश्नपत्र 2 (कठिन मूल्यांकन)",
+      explainerGs2Point1: "यह पूरी तरह से विश्लेषणात्मक पेपर है जिसमें भारतीय राजव्यवस्था, बिहार की अर्थव्यवस्था/भूगोल और विज्ञान एवं प्रौद्योगिकी शामिल हैं।",
+      explainerGs2Point2: "राजव्यवस्था और अर्थव्यवस्था के उत्तरों का कड़ाई से मूल्यांकन किया जाता है, जिसके लिए समालोचनात्मक विश्लेषण, अनुच्छेदों और समितियों की सिफारिशों (पुंछी, सरकारिया) की आवश्यकता होती है।",
+      explainerGs2Point3: "शीर्ष स्कोर शायद ही कहीं 155-162 अंकों से अधिक होते हैं। यहाँ तक कि 140+ का स्कोर भी उत्कृष्ट माना जाता है।",
+
+      // Proverbs Card Labels
+      proverbMeaningLabel: "अर्थ",
+      proverbContextLabel: "प्रासंगिकता (Context)",
 
       // Target Calculator
       topperCalcTitle: "🎯 टॉपर टार्गेट स्कोर ब्लूप्रिंट कैलकुलेटर",

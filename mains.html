@@ -79,19 +79,19 @@
             <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="explainerTitle">Why are GS-2 Marks Comparatively Low? (GS-1 vs GS-2 Analysis)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm leading-relaxed">
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-bold text-accent">GS Paper 1 (High Scoring Potential)</h3>
+                    <h3 class="font-bold text-accent" data-i18n="explainerGs1Title">GS Paper 1 (High Scoring Potential)</h3>
                     <ul class="list-disc pl-5 flex flex-col gap-1.5" style="color: var(--text-secondary);">
-                        <li>Contains a <strong>72-mark Statistics/DI</strong> section where candidates can easily score a perfect 72/72.</li>
-                        <li>History topics (Maurya Art, Pala Art, Patna Qalam, Tribal uprisings) are highly repetitive and predictable.</li>
-                        <li>High scores usually cluster around 180-195 marks.</li>
+                        <li data-i18n="explainerGs1Point1">Contains a 72-mark Statistics/DI section where candidates can easily score a perfect 72/72.</li>
+                        <li data-i18n="explainerGs1Point2">History topics (Maurya Art, Pala Art, Patna Qalam, Tribal uprisings) are highly repetitive and predictable.</li>
+                        <li data-i18n="explainerGs1Point3">High scores usually cluster around 180-195 marks.</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h3 class="font-bold text-accent">GS Paper 2 (Strict Evaluation)</h3>
+                    <h3 class="font-bold text-accent" data-i18n="explainerGs2Title">GS Paper 2 (Strict Evaluation)</h3>
                     <ul class="list-disc pl-5 flex flex-col gap-1.5" style="color: var(--text-secondary);">
-                        <li>Entirely subjective paper containing Indian Polity, Economy/Geography of Bihar, and Science & Tech.</li>
-                        <li>Polity and Economic responses are evaluated strictly, requiring critical analysis, articles, and recommendations (Punchhi, Sarkaria).</li>
-                        <li>Top scores rarely exceed 155-162 marks. Even a score of 140+ is considered excellent.</li>
+                        <li data-i18n="explainerGs2Point1">Entirely subjective paper containing Indian Polity, Economy/Geography of Bihar, and Science & Tech.</li>
+                        <li data-i18n="explainerGs2Point2">Polity and Economic responses are evaluated strictly, requiring critical analysis, articles, and recommendations (Punchhi, Sarkaria).</li>
+                        <li data-i18n="explainerGs2Point3">Top scores rarely exceed 155-162 marks. Even a score of 140+ is considered excellent.</li>
                     </ul>
                 </div>
             </div>
@@ -393,12 +393,16 @@
             const proverbsGrid = document.getElementById('bihar-proverbs-grid');
             if (proverbsGrid && window.BPSCData.biharProverbs) {
                 proverbsGrid.innerHTML = '';
+                const t = (window.BPSCData.translations && window.BPSCData.translations[window.BPSCData.currentLang || 'EN']) || {};
+                const meaningLabel = t.proverbMeaningLabel || 'Meaning';
+                const contextLabel = t.proverbContextLabel || 'Context';
+
                 window.BPSCData.biharProverbs.forEach(row => {
                     const div = document.createElement('div');
                     div.className = 'card p-5 rounded-xl flex flex-col gap-2.5';
                     
                     const meaningText = isHi && row.meaningHi ? row.meaningHi : row.meaningEn;
-                    const contextText = row.essayContext; // Only English exists
+                    const contextText = isHi && row.essayContextHi ? row.essayContextHi : row.essayContext;
                     
                     div.innerHTML = `
                         <div class="flex flex-col">
@@ -406,10 +410,10 @@
                             <span class="text-xs italic" style="color: var(--text-tertiary);">${row.proverbEn}</span>
                         </div>
                         <div class="text-xs leading-relaxed" style="color: var(--text-primary);">
-                            <strong>Meaning:</strong> ${meaningText}
+                            <strong>${meaningLabel}:</strong> ${meaningText}
                         </div>
                         <div class="text-xs leading-relaxed" style="color: var(--text-secondary);">
-                            <strong>Context:</strong> ${contextText}
+                            <strong>${contextLabel}:</strong> ${contextText}
                         </div>
                     `;
                     proverbsGrid.appendChild(div);
