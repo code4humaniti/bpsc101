@@ -153,24 +153,24 @@ window.BPSCData = {
 
   // Prelims Cutoff Table Data (66th to 71st BPSC)
   prelimsCutoffs: [
-    { edition: "66th BPSC (2020)", urMale: 108, urFem: 100, ewsMale: 103, ewsFem: 95, bc: 104, ebc: 102, sc: 95, st: 98, notes: "5 Options (A-E), No negative marking" },
-    { edition: "67th BPSC (2022)", urMale: 113, urFem: 109, ewsMale: 109, ewsFem: 105, bc: 109, ebc: 106, sc: 99, st: 103, notes: "Peak cutoff before reforms" },
-    { edition: "68th BPSC (2023)", urMale: 91.00, urFem: 84.00, ewsMale: 87.25, ewsFem: 81.25, bc: 87.00, ebc: 86.50, sc: 79.25, st: 74.00, notes: "REFORM: 1/4th negative marking introduced" },
-    { edition: "69th BPSC (2023)", urMale: 91.67, urFem: 84.00, ewsMale: 86.67, ewsFem: 77.67, bc: 84.00, ebc: 84.00, sc: 75.00, st: 79.33, notes: "REFORM: Options reduced to 4, 1/3rd penalty" },
-    { edition: "70th BPSC (2025)", urMale: 91.00, urFem: 81.00, ewsMale: 83.00, ewsFem: 73.00, bc: 75.00, ebc: 82.00, sc: 70.33, st: 65.33, notes: "Official declared prelims cutoffs" },
-    { edition: "71st BPSC (Est.)", urMale: 92.00, urFem: 82.00, ewsMale: 84.00, ewsFem: 75.00, bc: 77.00, ebc: 83.00, sc: 72.00, st: 68.00, notes: "Current target threshold (4-option & 1/3rd penalty)" }
+    { edition: "66th BPSC (2020)", urMale: 108, urFem: 100, ewsMale: 103, ewsFem: 95, bc: 104, ebc: 102, sc: 95, st: 98, notes: "5 Options (A-E), No negative marking", notesHi: "5 विकल्प (A-E), कोई नकारात्मक अंकन नहीं" },
+    { edition: "67th BPSC (2022)", urMale: 113, urFem: 109, ewsMale: 109, ewsFem: 105, bc: 109, ebc: 106, sc: 99, st: 103, notes: "Peak cutoff before reforms", notesHi: "सुधारों से पहले का उच्चतम कटऑफ अंक" },
+    { edition: "68th BPSC (2023)", urMale: 91.00, urFem: 84.00, ewsMale: 87.25, ewsFem: 81.25, bc: 87.00, ebc: 86.50, sc: 79.25, st: 74.00, notes: "REFORM: 1/4th negative marking introduced", notesHi: "सुधार: 1/4 ऋणात्मक अंकन प्रणाली लागू" },
+    { edition: "69th BPSC (2023)", urMale: 91.67, urFem: 84.00, ewsMale: 86.67, ewsFem: 77.67, bc: 84.00, ebc: 84.00, sc: 75.00, st: 79.33, notes: "REFORM: Options reduced to 4, 1/3rd penalty", notesHi: "सुधार: 4 विकल्प प्रणाली और 1/3 ऋणात्मक अंकन लागू" },
+    { edition: "70th BPSC (2025)", urMale: 91.00, urFem: 81.00, ewsMale: 83.00, ewsFem: 73.00, bc: 75.00, ebc: 82.00, sc: 70.33, st: 65.33, notes: "Official declared prelims cutoffs", notesHi: "आधिकारिक घोषित प्रारंभिक परीक्षा कटऑफ अंक" },
+    { edition: "71st BPSC (Est.)", urMale: 92.00, urFem: 82.00, ewsMale: 84.00, ewsFem: 75.00, bc: 77.00, ebc: 83.00, sc: 72.00, st: 68.00, notes: "Current target threshold (4-option & 1/3rd penalty)", notesHi: "वर्तमान लक्षित सीमा (4-विकल्प और 1/3 नकारात्मक अंकन)" }
   ],
 
   // Prelims Subject Weightage Data
   prelimsWeightage: [
-    { subject: "History (India + Bihar)", subjectHi: "इतिहास (भारत + बिहार)", avgQs: 28, pct: "18.6%", isHighYield: true, focus: "Ancient, Medieval, Modern & Bihar Freedom Movement (Kunwar Singh, JP Narayan)" },
-    { subject: "General Science", subjectHi: "सामान्य विज्ञान", avgQs: 26, pct: "17.3%", isHighYield: true, focus: "Everyday Physics applications, Chemistry compounds, Biology & Human diseases" },
-    { subject: "Current Affairs (National + Bihar)", subjectHi: "समसामयिकी (Current Affairs)", avgQs: 28, pct: "18.6%", isHighYield: true, focus: "Last 12 months national events, Bihar Govt Schemes (Saat Nischay 2.0) & Budget" },
-    { subject: "Bihar Special GK", subjectHi: "बिहार विशेष GK", avgQs: 22, pct: "14.6%", isHighYield: true, focus: "Bihar Geography, Rivers (Ganges, Kosi), Mineral zones, Census 2011 & Dynasties" },
-    { subject: "Indian Polity", subjectHi: "भारतीय राजव्यवस्था (Polity)", avgQs: 13, pct: "8.6%", isHighYield: false, focus: "Fundamental Rights, DPSP, Governor, Judiciary, Panchayati Raj 2006 (50% Women)" },
-    { subject: "Geography (India + Bihar)", subjectHi: "भूगोल (India & Bihar Geography)", avgQs: 12, pct: "8.0%", isHighYield: false, focus: "Physical Geography, Bihar District Boundaries, River Drainage & Soil types" },
-    { subject: "Indian Economy", subjectHi: "भारतीय अर्थव्यवस्था (Economy)", avgQs: 10, pct: "6.6%", isHighYield: false, focus: "Inflation, GDP, Bihar Economic Survey Highlights & State Budget allocations" },
-    { subject: "Quantitative Aptitude & Reasoning", subjectHi: "गणित एवं रीजनिंग", avgQs: 10, pct: "6.6%", isHighYield: false, focus: "Basic Algebra, Percentage, Profit/Loss, Time & Work, Logical Series" }
+    { subject: "History (India + Bihar)", subjectHi: "इतिहास (भारत + बिहार)", avgQs: 28, pct: "18.6%", isHighYield: true, focus: "Ancient, Medieval, Modern & Bihar Freedom Movement (Kunwar Singh, JP Narayan)", focusHi: "प्राचीन, मध्यकालीन, आधुनिक भारत का इतिहास एवं बिहार का स्वतंत्रता आंदोलन (कुंवर सिंह, जेपी नारायण)" },
+    { subject: "General Science", subjectHi: "सामान्य विज्ञान", avgQs: 26, pct: "17.3%", isHighYield: true, focus: "Everyday Physics applications, Chemistry compounds, Biology & Human diseases", focusHi: "दैनिक भौतिकी अनुप्रयोग, रासायनिक यौगिक, जीव विज्ञान और मानव रोग" },
+    { subject: "Current Affairs (National + Bihar)", subjectHi: "समसामयिकी (Current Affairs)", avgQs: 28, pct: "18.6%", isHighYield: true, focus: "Last 12 months national events, Bihar Govt Schemes (Saat Nischay 2.0) & Budget", focusHi: "विगत 12 महीनों के राष्ट्रीय घटनाक्रम, बिहार सरकार की योजनाएं (सात निश्चय 2.0) और बजट" },
+    { subject: "Bihar Special GK", subjectHi: "बिहार विशेष GK", avgQs: 22, pct: "14.6%", isHighYield: true, focus: "Bihar Geography, Rivers (Ganges, Kosi), Mineral zones, Census 2011 & Dynasties", focusHi: "बिहार का भूगोल, प्रमुख नदियां (गंगा, कोसी), खनिज क्षेत्र, जनगणना 2011 और स्थानीय राजवंश" },
+    { subject: "Indian Polity", subjectHi: "भारतीय राजव्यवस्था (Polity)", avgQs: 13, pct: "8.6%", isHighYield: false, focus: "Fundamental Rights, DPSP, Governor, Judiciary, Panchayati Raj 2006 (50% Women)", focusHi: "मौलिक अधिकार, नीति निर्देशक तत्व, राज्यपाल, न्यायपालिका, पंचायती राज अधिनियम 2006 (महिला 50% आरक्षण)" },
+    { subject: "Geography (India + Bihar)", subjectHi: "भूगोल (India & Bihar Geography)", avgQs: 12, pct: "8.0%", isHighYield: false, focus: "Physical Geography, Bihar District Boundaries, River Drainage & Soil types", focusHi: "भौतिक भूगोल, बिहार के जिलों की सीमाएं, नदी अपवाह तंत्र और मिट्टी के प्रकार" },
+    { subject: "Indian Economy", subjectHi: "भारतीय अर्थव्यवस्था (Economy)", avgQs: 10, pct: "6.6%", isHighYield: false, focus: "Inflation, GDP, Bihar Economic Survey Highlights & State Budget allocations", focusHi: "मुद्रास्फीति, जीडीपी, बिहार आर्थिक सर्वेक्षण के मुख्य अंश और बजट आवंटन" },
+    { subject: "Quantitative Aptitude & Reasoning", subjectHi: "गणित एवं रीजनिंग", avgQs: 10, pct: "6.6%", isHighYield: false, focus: "Basic Algebra, Percentage, Profit/Loss, Time & Work, Logical Series", focusHi: "मूल बीजगणित, प्रतिशत, लाभ/हानि, समय और कार्य, तार्किक श्रृंखला" }
   ],
 
   // Ultra-Focused Prelims Resource Stack
@@ -182,7 +182,8 @@ window.BPSCData = {
       primarySourceHi: "स्पेक्ट्रम (आधुनिक भारत) + पुरानी NCERT कक्षा 11 (प्राचीन/मध्यकालीन)",
       practiceTool: "Ghatna Chakra Purvavalokan (History)",
       practiceToolHi: "घटना चक्र पूर्वावलोकन (इतिहास)",
-      strategyTip: "Focus heavily on 1857 Revolt in Bihar (Kunwar Singh), 1942 Quit India (Azad Dasta), Champaran 1917, and Bihar Provincial Conference 1908."
+      strategyTip: "Focus heavily on 1857 Revolt in Bihar (Kunwar Singh), 1942 Quit India (Azad Dasta), Champaran 1917, and Bihar Provincial Conference 1908.",
+      strategyTipHi: "बिहार में 1857 के विद्रोह (कुंवर सिंह), 1942 भारत छोड़ो (आज़ाद दस्ता), चंपारण 1917 और बिहार प्रांतीय सम्मेलन 1908 पर विशेष ध्यान दें।"
     },
     {
       subject: "General Science",
@@ -191,7 +192,8 @@ window.BPSCData = {
       primarySourceHi: "कक्षा 9 एवं 10 NCERT विज्ञान पाठ्यपुस्तकें",
       practiceTool: "Ghatna Chakra Purvavalokan (Samanya Vigyan)",
       practiceToolHi: "घटना चक्र पूर्वावलोकन (सामान्य विज्ञान)",
-      strategyTip: "Solve all PYQs from Ghatna Chakra. Focus on applied physics, human anatomy, vitamins/deficiencies, and common chemical formulas."
+      strategyTip: "Solve all PYQs from Ghatna Chakra. Focus on applied physics, human anatomy, vitamins/deficiencies, and common chemical formulas.",
+      strategyTipHi: "घटना चक्र के सभी पिछले वर्षों के प्रश्नों (PYQs) को हल करें। व्यावहारिक भौतिकी, मानव शरीर रचना, विटामिन/कमियों और सामान्य रासायनिक सूत्रों पर ध्यान केंद्रित करें।"
     },
     {
       subject: "Indian Polity",
@@ -200,7 +202,8 @@ window.BPSCData = {
       primarySourceHi: "एम. लक्ष्मीकांत (चयनित मुख्य अध्याय)",
       practiceTool: "Ghatna Chakra Purvavalokan (Polity)",
       practiceToolHi: "घटना चक्र पूर्वावलोकन (राजव्यवस्था)",
-      strategyTip: "Selective reading: Preamble, Fundamental Rights, DPSP, President/Governor, Panchayati Raj Act 2006, and Constitutional Bodies."
+      strategyTip: "Selective reading: Preamble, Fundamental Rights, DPSP, President/Governor, Panchayati Raj Act 2006, and Constitutional Bodies.",
+      strategyTipHi: "चयनात्मक अध्ययन: प्रस्तावना, मौलिक अधिकार, राज्य के नीति निर्देशक तत्व, राष्ट्रपति/राज्यपाल, पंचायती राज अधिनियम 2006 और संवैधानिक निकाय।"
     },
     {
       subject: "Geography & Economy",
@@ -209,7 +212,8 @@ window.BPSCData = {
       primarySourceHi: "NCERT कक्षा 11-12 भूगोल + मुख्य अर्थव्यवस्था अवधारणाएं",
       practiceTool: "Ghatna Chakra (Geography & Economy)",
       practiceToolHi: "घटना चक्र (भूगोल एवं अर्थव्यवस्था)",
-      strategyTip: "Master Bihar district map boundaries (bordering UP, Nepal, WB, Jharkhand) and Bihar river drainage systems."
+      strategyTip: "Master Bihar district map boundaries (bordering UP, Nepal, WB, Jharkhand) and Bihar river drainage systems.",
+      strategyTipHi: "बिहार के जिला मानचित्र की सीमाओं (यूपी, नेपाल, पश्चिम बंगाल, झारखंड की सीमा से लगे जिले) और बिहार नदी अपवाह तंत्र में महारत हासिल करें।"
     },
     {
       subject: "Bihar Special GK",
@@ -218,7 +222,8 @@ window.BPSCData = {
       primarySourceHi: "इम्तियाज अहमद / क्राउन बिहार विशेष (पाठ्यपुस्तक प्रारूप)",
       practiceTool: "Past 10 Years BPSC Prelims PYQs",
       practiceToolHi: "विगत 10 वर्षों के BPSC प्रीलिम्स PYQs",
-      strategyTip: "Memorize Bihar Census 2011 data (Literacy: Rohtas 73.37%, Sex Ratio, Population Density) and Bihar Forest Report."
+      strategyTip: "Memorize Bihar Census 2011 data (Literacy: Rohtas 73.37%, Sex Ratio, Population Density) and Bihar Forest Report.",
+      strategyTipHi: "बिहार जनगणना 2011 के आंकड़ों (साक्षरता: रोहतास 73.37%, लिंगानुपात, जनसंख्या घनत्व) और बिहार वन रिपोर्ट को याद करें।"
     },
     {
       subject: "Current Affairs",
@@ -227,7 +232,8 @@ window.BPSCData = {
       primarySourceHi: "एड्यूटिरिया / स्पीडी वार्षिकांक + मासिक पत्रिका (विज़न / प्रतियोगिता दर्पण)",
       practiceTool: "Eduteria Practice Sets",
       practiceToolHi: "एड्यूटिरिया प्रैक्टिस सेट्स",
-      strategyTip: "Cover past 12 months. Thoroughly revise Bihar State Budget & Economic Survey key figures and Bihar welfare schemes."
+      strategyTip: "Cover past 12 months. Thoroughly revise Bihar State Budget & Economic Survey key figures and Bihar welfare schemes.",
+      strategyTipHi: "विगत 12 महीनों के घटनाक्रम को कवर करें। बिहार राज्य बजट और आर्थिक सर्वेक्षण के प्रमुख आंकड़ों और बिहार कल्याणकारी योजनाओं को अच्छी तरह से दोहराएं।"
     }
   ],
 
@@ -296,9 +302,9 @@ window.BPSCData = {
 
   // Mains Stage Selection Cutoff Data (68th to 70th BPSC - Out of 1020 Marks)
   mainsCutoffs: [
-    { edition: "68th BPSC (1020 Marks)", urMale: 521, urFem: 512, ewsMale: 518, ewsFem: 508, bc: 520, ebc: 510, sc: 465, st: 475, notes: "First exam with 300-mark Essay & Qualifying Optional" },
-    { edition: "69th BPSC (1020 Marks)", urMale: 532, urFem: 523, ewsMale: 526, ewsFem: 516, bc: 528, ebc: 520, sc: 478, st: 485, notes: "Integrated CCE mains format" },
-    { edition: "70th BPSC (1020 Marks)", urMale: 528, urFem: 521, ewsMale: 528, ewsFem: 520, bc: 528, ebc: 523, sc: 472, st: 480, notes: "Official final selection cutoff scores" }
+    { edition: "68th BPSC (1020 Marks)", urMale: 521, urFem: 512, ewsMale: 518, ewsFem: 508, bc: 520, ebc: 510, sc: 465, st: 475, notes: "First exam with 300-mark Essay & Qualifying Optional", notesHi: "300 अंकों का निबंध पत्र और क्वालिफाइंग वैकल्पिक विषय वाला पहला संस्करण" },
+    { edition: "69th BPSC (1020 Marks)", urMale: 532, urFem: 523, ewsMale: 526, ewsFem: 516, bc: 528, ebc: 520, sc: 478, st: 485, notes: "Integrated CCE mains format", notesHi: "एकीकृत संयुक्त मुख्य परीक्षा प्रारूप" },
+    { edition: "70th BPSC (1020 Marks)", urMale: 528, urFem: 521, ewsMale: 528, ewsFem: 520, bc: 528, ebc: 523, sc: 472, st: 480, notes: "Official final selection cutoff scores", notesHi: "आधिकारिक घोषित अंतिम चयन कटऑफ अंक" }
   ],
 
   // Mains Paper Breakdown & Syllabus
@@ -312,7 +318,8 @@ window.BPSCData = {
       pct: "29.4%",
       topics: "Modern History of India & Bihar Culture, National & International Current Events, Statistical Analysis, Graphs & Diagrams.",
       topicsHi: "भारत का आधुनिक इतिहास एवं बिहार की संस्कृति (पटना कलम, मौर्य, पाल कला), राष्ट्रीय/अंतरराष्ट्रीय समसामयिकी, सांख्यिकीय विश्लेषण व आरेख।",
-      keyFocus: "⭐ High-Scoring Focus: Practice Statistics PYQs thoroughly — it carries 72 marks where full marks (72/72) are possible!"
+      keyFocus: "⭐ High-Scoring Focus: Practice Statistics PYQs thoroughly — it carries 72 marks where full marks (72/72) are possible!",
+      keyFocusHi: "⭐ उच्च स्कोरिंग क्षेत्र: सांख्यिकी (DI) के पिछले वर्षों के प्रश्नों का गहन अभ्यास करें — यह 72 अंकों का है जहां पूरे 72/72 अंक प्राप्त किए जा सकते हैं!"
     },
     {
       code: "GS2",
@@ -323,7 +330,8 @@ window.BPSCData = {
       pct: "29.4%",
       topics: "Indian Polity & Governance, Indian & Bihar Economy & Geography, Role and Impact of Science & Technology in Development.",
       topicsHi: "भारतीय राजव्यवस्था व शासन प्रणाली, भारत एवं बिहार की अर्थव्यवस्था व भूगोल, विकास में विज्ञान एवं प्रौद्योगिकी की भूमिका।",
-      keyFocus: "⭐ High-Scoring Focus: Anchor Economy answers with Bihar Economic Survey data & Budget figures; link S&T to agriculture and waste mgmt."
+      keyFocus: "⭐ High-Scoring Focus: Anchor Economy answers with Bihar Economic Survey data & Budget figures; link S&T to agriculture and waste mgmt.",
+      keyFocusHi: "⭐ उच्च स्कोरिंग क्षेत्र: अर्थव्यवस्था के उत्तरों में बिहार आर्थिक सर्वेक्षण और बजट के आंकड़ों को शामिल करें; विज्ञान एवं तकनीक को कृषि तथा अपशिष्ट प्रबंधन से जोड़ें।"
     },
     {
       code: "ESSAY",
@@ -334,7 +342,8 @@ window.BPSCData = {
       pct: "29.4%",
       topics: "Section 1: General/National Topic (100). Section 2: Socio-Economic/State Topic (100). Section 3: Bihar Proverbs & Folklore (100).",
       topicsHi: "खंड 1: राष्ट्रीय/दार्शनिक विषय (100)। खंड 2: सामाजिक-आर्थिक विषय (100)। खंड 3: बिहार सांस्कृतिक कहावतें व लोकोक्तियां (100)।",
-      keyFocus: "⭐ High-Scoring Focus: Section 3 is dedicated to Bihar proverbs in Devanagari script. Writing structured, rich local essays guarantees 200+ marks!"
+      keyFocus: "⭐ High-Scoring Focus: Section 3 is dedicated to Bihar proverbs in Devanagari script. Writing structured, rich local essays guarantees 200+ marks!",
+      keyFocusHi: "⭐ उच्च स्कोरिंग क्षेत्र: खंड 3 देवनागरी में बिहार की लोकोक्तियों और कहावतों पर केंद्रित है। संरचनात्मक रूप से स्थानीय संदर्भ जोड़कर लिखने पर 200+ अंक मिल सकते हैं!"
     },
     {
       code: "INT",
@@ -345,7 +354,8 @@ window.BPSCData = {
       pct: "11.8%",
       topics: "Personality evaluation, administrative aptitude, situational decision-making, Bihar state awareness, and general knowledge.",
       topicsHi: "व्यक्तित्व परीक्षण, प्रशासनिक दृष्टिकोण, परिस्थितिजन्य निर्णय क्षमता, बिहार राज्य ज्ञान एवं सामान्य जागरूकता।",
-      keyFocus: "⭐ Merit Decider: Final selection threshold out of 1020 total merit marks."
+      keyFocus: "⭐ Merit Decider: Final selection threshold out of 1020 total merit marks.",
+      keyFocusHi: "⭐ मेधा निर्धारक: कुल 1020 मेधा अंकों के आधार पर अंतिम चयन सीमा।"
     }
   ],
 
@@ -356,21 +366,24 @@ window.BPSCData = {
       paperHi: "GS प्रश्नपत्र 1 (300 अंक)",
       sources: "Spectrum + Imtiaz Ahmad (Bihar Freedom Movement & Tribal Uprisings) + RS Aggarwal (Statistics PYQ Practice)",
       sourcesHi: "स्पेक्ट्रम + इम्तियाज अहमद (बिहार स्वतंत्रता संग्राम व जनजाति विद्रोह) + RS अग्रवाल (सांख्यिकी अभ्यास)",
-      strategy: "Master Bihar tribal/peasant uprisings (Santhal 1855, Munda 1899, Indigo, Champaran). Practice past 10 years BPSC Statistics questions to score full 72 marks."
+      strategy: "Master Bihar tribal/peasant uprisings (Santhal 1855, Munda 1899, Indigo, Champaran). Practice past 10 years BPSC Statistics questions to score full 72 marks.",
+      strategyHi: "बिहार के जनजातीय/किसान आंदोलनों (संथाल 1855, मुंडा 1899, नील विद्रोह, चंपारण) पर नियंत्रण करें। पूरे 72 अंक प्राप्त करने के लिए पिछले 10 वर्षों के सांख्यिकी प्रश्नों का अभ्यास करें।"
     },
     {
       paper: "GS Paper 2 (300 Marks)",
       paperHi: "GS प्रश्नपत्र 2 (300 अंक)",
       sources: "M. Laxmikanth (Polity) + Bihar Economic Survey & Budget Summary + Applied S&T Notes",
       sourcesHi: "एम. लक्ष्मीकांत (राजव्यवस्था) + बिहार आर्थिक सर्वेक्षण एवं बजट सार + व्यावहारिक विज्ञान व टेक नोट्स",
-      strategy: "Polity: Focus on Governor's role, Centre-State relations, Judicial Activism, Panchayati Raj. Economy: Quote exact Bihar Economic Survey statistics. S&T: Energy, Space, Waste Mgmt, Agriculture Tech."
+      strategy: "Polity: Focus on Governor's role, Centre-State relations, Judicial Activism, Panchayati Raj. Economy: Quote exact Bihar Economic Survey statistics. S&T: Energy, Space, Waste Mgmt, Agriculture Tech.",
+      strategyHi: "राजव्यवस्था: राज्यपाल की भूमिका, केंद्र-राज्य संबंध, न्यायिक सक्रियता, पंचायती राज। अर्थव्यवस्था: बिहार आर्थिक सर्वेक्षण के सटीक आंकड़े उद्धृत करें। विज्ञान एवं तकनीक: ऊर्जा, अंतरिक्ष, अपशिष्ट प्रबंधन, कृषि तकनीक।"
     },
     {
       paper: "Essay Paper (300 Marks)",
       paperHi: "निबंध पत्र (300 अंक)",
       sources: "Devanagari Bihar Proverbs Library + Editorial Pages (Dainik Jagran Rashtriya Edition / The Hindu) + Model Essays",
       sourcesHi: "देवनागरी बिहार कहावतें पुस्तकालय + संपादकीय पृष्ठ (दैनिक जागरण राष्ट्रीय संस्करण / द हिंदू) + मॉडल निबंध",
-      strategy: "Build logical arguments from quality editorials. Practice writing Section 3 essays based on traditional Bihar proverbs in Devanagari script."
+      strategy: "Build logical arguments from quality editorials. Practice writing Section 3 essays based on traditional Bihar proverbs in Devanagari script.",
+      strategyHi: "गुणवत्तापूर्ण संपादकीय से तार्किक तर्क विकसित करें। देवनागरी लिपि में पारंपरिक बिहार लोकोक्तियों पर आधारित खंड 3 के निबंध लिखने का अभ्यास करें।"
     }
   ],
 

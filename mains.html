@@ -330,6 +330,7 @@
                 window.BPSCData.mainsCutoffs.forEach(row => {
                     const tr = document.createElement('tr');
                     
+                    const notesText = isHi && row.notesHi ? row.notesHi : row.notes;
                     tr.innerHTML = `
                         <td class="p-3 border-b font-bold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${row.edition}</td>
                         <td class="p-3 border-b cat-ur" style="border-color: var(--border);">${row.urMale || '-'}</td>
@@ -340,7 +341,7 @@
                         <td class="p-3 border-b cat-ebc" style="border-color: var(--border);">${row.ebc || '-'}</td>
                         <td class="p-3 border-b cat-sc" style="border-color: var(--border);">${row.sc || '-'}</td>
                         <td class="p-3 border-b cat-st" style="border-color: var(--border);">${row.st || '-'}</td>
-                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-tertiary); font-size: 0.875rem;">${row.notes || '-'}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-tertiary); font-size: 0.875rem;">${notesText || '-'}</td>
                     `;
                     cutoffTbody.appendChild(tr);
                 });
@@ -355,7 +356,7 @@
                     
                     const nameText = isHi && paper.nameHi ? paper.nameHi : paper.name;
                     const topicsText = isHi && paper.topicsHi ? paper.topicsHi : paper.topics;
-                    const keyFocusText = paper.keyFocus; // String field, no HI translation present
+                    const keyFocusText = isHi && paper.keyFocusHi ? paper.keyFocusHi : paper.keyFocus;
                     
                     tr.innerHTML = `
                         <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${nameText}</td>
@@ -377,7 +378,7 @@
                     
                     const paperText = isHi && row.paperHi ? row.paperHi : row.paper;
                     const sourcesText = isHi && row.sourcesHi ? row.sourcesHi : row.sources;
-                    const strategyText = row.strategy; // Only english field exists
+                    const strategyText = isHi && row.strategyHi ? row.strategyHi : row.strategy;
                     
                     tr.innerHTML = `
                         <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${paperText}</td>

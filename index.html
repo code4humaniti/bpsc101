@@ -236,9 +236,9 @@
                     const tr = document.createElement('tr');
                     
                     const subjText = isHi && row.subjectHi ? row.subjectHi : row.subject;
-                    const focusText = row.focus;
+                    const focusText = isHi && row.focusHi ? row.focusHi : row.focus;
                     const priorityClass = row.isHighYield ? 'badge-high-yield' : 'badge-secondary';
-                    const priorityText = row.isHighYield ? '🔥 High Yield' : 'Secondary';
+                    const priorityText = row.isHighYield ? (isHi ? '🔥 उच्च अंकदायी' : '🔥 High Yield') : (isHi ? 'द्वितीयक' : 'Secondary');
                     
                     tr.innerHTML = `
                         <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${subjText}</td>
@@ -263,7 +263,7 @@
                     const subjText = isHi && row.subjectHi ? row.subjectHi : row.subject;
                     const sourceText = isHi && row.primarySourceHi ? row.primarySourceHi : row.primarySource;
                     const practiceText = isHi && row.practiceToolHi ? row.practiceToolHi : row.practiceTool;
-                    const strategyText = row.strategyTip;
+                    const strategyText = isHi && row.strategyTipHi ? row.strategyTipHi : row.strategyTip;
                     
                     tr.innerHTML = `
                         <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${subjText}</td>
