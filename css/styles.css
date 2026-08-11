@@ -270,3 +270,84 @@ input:focus, select:focus {
   color: var(--text-secondary);
   border: 1px solid var(--border);
 }
+
+/* ─────────────────────────────────────────
+   Responsive Utility Layer
+   Provides real implementations of all
+   sm: / md: / lg: classes used in HTML.
+   (No Tailwind — these are hand-rolled.)
+───────────────────────────────────────── */
+
+/* ── Shared mobile defaults ── */
+.sm\:px-6 { padding-left: 1rem; padding-right: 1rem; }
+.sm\:grid-cols-2,
+.sm\:grid-cols-3 { grid-template-columns: 1fr; }
+.md\:grid-cols-2,
+.md\:grid-cols-3,
+.md\:grid-cols-4 { grid-template-columns: 1fr; }
+.lg\:grid-cols-3 { grid-template-columns: 1fr; }
+.sm\:text-left { text-align: center; }
+.sm\:items-start { align-items: center; }
+.sm\:text-4xl,
+.sm\:text-5xl { font-size: 1.75rem; }
+.sm\:text-base { font-size: 0.875rem; }
+.sm\:text-xl { font-size: 1rem; }
+
+/* ── sm breakpoint ≥ 640px ── */
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .sm\:text-left { text-align: left; }
+  .sm\:items-start { align-items: flex-start; }
+  .sm\:text-4xl { font-size: 2.25rem; }
+  .sm\:text-5xl { font-size: 3rem; }
+  .sm\:text-base { font-size: 1rem; }
+  .sm\:text-xl { font-size: 1.25rem; }
+  .sm\:p-8 { padding: 2rem; }
+}
+
+/* ── md breakpoint ≥ 768px ── */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── lg breakpoint ≥ 1024px ── */
+@media (min-width: 1024px) {
+  .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ─────────────────────────────────────────
+   Mobile-specific fixes
+───────────────────────────────────────── */
+@media (max-width: 639px) {
+
+  /* Navbar: shrink logo + tighten controls on phones */
+  nav .max-w-5xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Make the Prelims/Mains toggle text shorter on very small screens */
+  .nav-tab-label { font-size: 0.72rem; }
+
+  /* Table: reduce cell padding and font size so columns fit better */
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem 0.625rem;
+    font-size: 0.78rem;
+  }
+
+  /* Calculator: stack inputs single column on phones */
+  .grid.grid-cols-2.gap-4:has(input[type="number"]) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce section heading sizes */
+  h2.text-2xl { font-size: 1.25rem; }
+  h3.text-xl  { font-size: 1.05rem; }
+}
+

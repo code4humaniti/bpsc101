@@ -78,11 +78,11 @@ function renderNavbar() {
 
         <!-- Center: [Prelims | Mains] -->
         <div style="background: var(--bg-hover); border: 1px solid var(--border); border-radius: 0.5rem; padding: 0.2rem;" class="flex items-center gap-0.5">
-          <a href="index.html" style="${isPrelims ? activeStyle : inactiveStyle}" class="inline-flex items-center gap-1">
-            <span>${isHi ? 'प्रारम्भिक' : 'Prelims'}</span>
+          <a href="index.html" style="${isPrelims ? activeStyle : inactiveStyle}" class="inline-flex items-center gap-1 nav-tab">
+            <span class="nav-tab-label">${isHi ? 'प्रारम्भिक' : 'Prelims'}</span>
           </a>
-          <a href="mains.html" style="${isMains ? activeStyle : inactiveStyle}" class="inline-flex items-center gap-1">
-            <span>${isHi ? 'मुख्य' : 'Mains'}</span>
+          <a href="mains.html" style="${isMains ? activeStyle : inactiveStyle}" class="inline-flex items-center gap-1 nav-tab">
+            <span class="nav-tab-label">${isHi ? 'मुख्य' : 'Mains'}</span>
           </a>
         </div>
 
