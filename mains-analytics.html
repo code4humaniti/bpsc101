@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPSC Mains Stage Analytics & Cutoffs (1020 Marks) | BPSC Analytics Portal</title>
+  <meta name="description" content="Comprehensive BPSC Mains stage analytics, 1020 merit marks breakdown (GS 1, GS 2, Essay, Interview), and category-wise final selection cutoffs from 68th to 70th BPSC.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              850: '#172033',
+              950: '#0B1120',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Header Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-12">
+    
+    <!-- Header Banner -->
+    <div class="space-y-4 border-b border-slate-800 pb-6">
+      <div data-i18n="mainsBadge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 text-xs font-semibold uppercase">
+        Mains Examination Stage Analytics
+      </div>
+      <h1 data-i18n="mainsTitle" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        BPSC Mains Structure & Final Selection Cutoffs <span class="text-gradient-blue">(1020 Marks)</span>
+      </h1>
+      <p data-i18n="mainsDesc" class="text-slate-300 max-w-3xl text-sm sm:text-base leading-relaxed">
+        Detailed breakdown of BPSC Mains merit papers (GS 1, GS 2, Essay) and Interview marks alongside category-wise final selection cutoffs.
+      </p>
+    </div>
+
+    <!-- Mains Paper Weightage & Score Distribution Grid -->
+    <section class="space-y-6">
+      <h2 data-i18n="mainsPapersTitle" class="text-xl font-bold text-white flex items-center gap-2">
+        📜 Mains Paper Weightage & Score Distribution
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- GS 1 Card -->
+        <div class="glass-card p-6 border-blue-500/30 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-extrabold bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-md">GS 1</span>
+            <span class="text-xl font-black text-white">300 Marks</span>
+          </div>
+          <h3 class="font-bold text-lg text-white">General Studies Paper 1</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            History of India & Bihar Culture (Patna Kalam, Mauryan, Pala Art, 1857 Revolt), National/Intl Current Affairs & Statistical Analysis/Graphs.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-blue-400">Merit Paper • 29.4% of Total Score</div>
+        </div>
+
+        <!-- GS 2 Card -->
+        <div class="glass-card p-6 border-emerald-500/30 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-extrabold bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 rounded-md">GS 2</span>
+            <span class="text-xl font-black text-white">300 Marks</span>
+          </div>
+          <h3 class="font-bold text-lg text-white">General Studies Paper 2</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Indian Polity & Governance (Bihar Panchayati Raj, Federalism), Indian & Bihar Economy & Geography, Science & Technology Role in Development.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-emerald-400">Merit Paper • 29.4% of Total Score</div>
+        </div>
+
+        <!-- Essay Paper Card -->
+        <div class="glass-card p-6 border-amber-500/30 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-extrabold bg-amber-600/20 text-amber-400 border border-amber-500/30 rounded-md">ESSAY</span>
+            <span class="text-xl font-black text-white">300 Marks</span>
+          </div>
+          <h3 class="font-bold text-lg text-white">Essay Paper (3 Essays)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            3 Essays (100 marks each): Section 1 (General/National), Section 2 (Socio-Economic), Section 3 (Bihar Proverbs & Folklore in Devanagari).
+          </p>
+          <div class="pt-2 text-xs font-semibold text-amber-400">Merit Paper • 29.4% of Total Score</div>
+        </div>
+
+        <!-- Interview Card -->
+        <div class="glass-card p-6 border-pink-500/30 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-extrabold bg-pink-600/20 text-pink-400 border border-pink-500/30 rounded-md">INTERVIEW</span>
+            <span class="text-xl font-black text-white">120 Marks</span>
+          </div>
+          <h3 class="font-bold text-lg text-white">Personality Test</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Evaluates administrative aptitude, situational judgment, Bihar state knowledge, communication skills, and general awareness.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-pink-400">Merit Stage • 11.8% of Total Score</div>
+        </div>
+
+        <!-- Qualifying Hindi Card -->
+        <div class="glass-card p-6 border-slate-700 space-y-3 opacity-90">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 rounded-md">QUALIFYING</span>
+            <span class="text-lg font-bold text-slate-300">100 Marks</span>
+          </div>
+          <h3 class="font-bold text-base text-white">General Hindi (सामान्य हिंदी)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Qualifying only (Pass Marks: 30%). Marks are NOT added to final merit list. Covers grammar, essay, precis, and sentence correction.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-slate-400">Non-Merit • Pass Required</div>
+        </div>
+
+        <!-- Qualifying Optional MCQ Card -->
+        <div class="glass-card p-6 border-purple-500/30 space-y-3 opacity-90">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 text-xs font-bold bg-purple-600/20 text-purple-400 border border-purple-500/30 rounded-md">QUALIFYING MCQ</span>
+            <span class="text-lg font-bold text-slate-300">100 Marks</span>
+          </div>
+          <h3 class="font-bold text-base text-white">Optional Paper (MCQ Format)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Qualifying MCQ paper (Pass Marks: 40% UR, 36.5% BC, 34% EBC, 32% SC/ST/Women). Marks are NOT added to final merit list.
+          </p>
+          <div class="pt-2 text-xs font-semibold text-purple-400">Non-Merit • Qualifying MCQ</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BPSC Essay Paper Detailed Breakdown Card -->
+    <section class="glass-card p-6 sm:p-8 space-y-6 border-amber-500/30">
+      <h2 data-i18n="essaySectionTitle" class="text-xl font-bold text-white flex items-center gap-2">
+        ✍️ BPSC Essay Paper (300 Marks) Structure
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-300 rounded">Section 1</span>
+            <span class="font-bold text-white text-sm">100 Marks</span>
+          </div>
+          <h3 class="font-bold text-white text-sm">National & Philosophical Topics</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Democracy, Good Governance, International Relations, Artificial Intelligence, Ethics, Climate Change, or Freedom Struggle.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-300 rounded">Section 2</span>
+            <span class="font-bold text-white text-sm">100 Marks</span>
+          </div>
+          <h3 class="font-bold text-white text-sm">Socio-Economic & Development</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Poverty alleviation, Agriculture in Bihar, Women Empowerment, Education Policy, Industrialization, or Sustainable Growth.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 text-xs font-bold bg-pink-500/20 text-pink-300 rounded">Section 3 (Unique)</span>
+            <span class="font-bold text-white text-sm">100 Marks</span>
+          </div>
+          <h3 class="font-bold text-white text-sm">Bihar Cultural Wisdom & Proverbs</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Written in Devanagari script. Focuses on traditional Bihar proverbs (e.g. <em>"बिना मवले काम ना होला"</em>, <em>"खेती आपन सेती"</em>) and rural folklore.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mains Final Cutoff Trends Chart & Table -->
+    <section class="glass-card p-6 sm:p-8 space-y-6">
+      
+      <div class="space-y-1">
+        <h2 data-i18n="mainsCutoffTitle" class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+          📊 Historical Mains Final Selection Cutoffs (Out of 1020)
+        </h2>
+        <p data-i18n="mainsCutoffDesc" class="text-xs text-slate-400">
+          Category-wise final cutoffs for 68th, 69th, and 70th BPSC CCE after introduction of the Essay paper.
+        </p>
+      </div>
+
+      <div id="mains-category-checkboxes" class="flex flex-wrap gap-3 pt-1 border-t border-b border-slate-800 py-3">
+        <!-- Rendered dynamically by js/mains-chart.js -->
+      </div>
+
+      <!-- Mains Line Chart Canvas -->
+      <div class="chart-container">
+        <canvas id="mainsCutoffChartCanvas"></canvas>
+      </div>
+
+    </section>
+
+    <!-- Mains Data Table -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-bold text-white flex items-center gap-2">
+        📋 Mains Final Selection Cutoff Table (Out of 1020 Marks)
+      </h2>
+
+      <div class="glass-card overflow-hidden border-slate-800 shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-900/90 text-slate-300 border-b border-slate-800 text-xs uppercase tracking-wider">
+                <th class="p-4 font-bold">Exam Edition</th>
+                <th class="p-4 font-bold text-red-400">UR (Male)</th>
+                <th class="p-4 font-bold text-pink-400">UR (Female)</th>
+                <th class="p-4 font-bold text-blue-400">EWS (Male)</th>
+                <th class="p-4 font-bold text-purple-400">EWS (Female)</th>
+                <th class="p-4 font-bold text-emerald-400">BC</th>
+                <th class="p-4 font-bold text-amber-400">EBC</th>
+              </tr>
+            </thead>
+            <tbody id="mains-table-body" class="divide-y divide-slate-800">
+              <!-- Rendered dynamically by js/mains-chart.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/mains-chart.js"></script>
+</body>
+</html>

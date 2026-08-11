@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPSC 101 — Mains Hub</title>
+
+    <!-- FOUC Prevention -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('bpsc_theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CDN for layout only -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            corePlugins: {
+                preflight: true,
+            }
+        }
+    </script>
+
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="css/styles.css?v=4.0">
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: var(--bg-page); color: var(--text-primary);">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full flex flex-col gap-10">
+        
+        <!-- 1. HERO SECTION -->
+        <section class="text-center sm:text-left flex flex-col gap-3">
+            <h1 class="text-4xl sm:text-5xl font-bold" style="color: var(--text-primary);" data-i18n="mainsTitle">BPSC Mains</h1>
+            <p class="text-lg sm:text-xl" style="color: var(--text-secondary);" data-i18n="mainsDesc">Comprehensive hub for Mains preparation, previous year cutoffs, weightage, and safe score tracking.</p>
+        </section>
+
+        <!-- 2. STRATEGY BANNER -->
+        <section class="card-accent p-6 rounded-xl">
+            <h2 class="text-xl font-bold mb-2 text-accent" data-i18n="strategyBannerTitle">Core Strategy: Maximize Written Marks</h2>
+            <p class="text-sm leading-relaxed" style="color: var(--text-primary);" data-i18n="strategyBannerDesc">Interview is unpredictable. The surest path to success is to maximize your score in GS1, GS2, and Essay (900 marks total). Aim for a written score that guarantees a spot even with average interview marks.</p>
+        </section>
+
+        <!-- 3. TOPPER BLUEPRINT -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="topperTitle">70th BPSC Topper Marks Blueprint (Out of 1020 Total Marks)</h2>
+            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="topperDesc">Notice the razor-thin 1-mark gap between Rank 1 and Ranks 2/3 in 70th BPSC! Every single mark in written papers matters.</p>
+            <div id="toppers-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+        <!-- 4. SCORE COMPARISON MATRIX -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="matrixTitle">Mains Paper Score Comparison Matrix (Top vs High vs Good)</h2>
+            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="matrixDesc">Target benchmark scores across GS-1, GS-2, Essay, and Interview to secure a Top Rank.</p>
+            <div id="mains-matrix-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+        <!-- 5. GS-1 vs GS-2 EXPLAINER -->
+        <section class="card p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="explainerTitle">Why are GS-2 Marks Comparatively Low? (GS-1 vs GS-2 Analysis)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm leading-relaxed">
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-bold text-accent">GS Paper 1 (High Scoring Potential)</h3>
+                    <ul class="list-disc pl-5 flex flex-col gap-1.5" style="color: var(--text-secondary);">
+                        <li>Contains a <strong>72-mark Statistics/DI</strong> section where candidates can easily score a perfect 72/72.</li>
+                        <li>History topics (Maurya Art, Pala Art, Patna Qalam, Tribal uprisings) are highly repetitive and predictable.</li>
+                        <li>High scores usually cluster around 180-195 marks.</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-bold text-accent">GS Paper 2 (Strict Evaluation)</h3>
+                    <ul class="list-disc pl-5 flex flex-col gap-1.5" style="color: var(--text-secondary);">
+                        <li>Entirely subjective paper containing Indian Polity, Economy/Geography of Bihar, and Science & Tech.</li>
+                        <li>Polity and Economic responses are evaluated strictly, requiring critical analysis, articles, and recommendations (Punchhi, Sarkaria).</li>
+                        <li>Top scores rarely exceed 155-162 marks. Even a score of 140+ is considered excellent.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TARGET CALCULATOR -->
+        <section class="flex flex-col gap-4">
+            <div class="card p-6 rounded-xl">
+                <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);" data-i18n="topperCalcTitle">Topper's Target Score Blueprint Calculator</h2>
+                <p class="mb-6 text-sm" style="color: var(--text-secondary);" data-i18n="topperCalcDesc">Customize your target marks across GS-1, GS-2, Essay, and Interview to project your total merit score against the 593-mark Topper Benchmark.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Inputs -->
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs mb-1" style="color: var(--text-secondary);">GS-1 (Max 300)</label>
+                                <input type="number" id="calc-gs1" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" value="175" min="0" max="300">
+                            </div>
+                            <div>
+                                <label class="block text-xs mb-1" style="color: var(--text-secondary);">GS-2 (Max 300)</label>
+                                <input type="number" id="calc-gs2" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" value="150" min="0" max="300">
+                            </div>
+                            <div>
+                                <label class="block text-xs mb-1" style="color: var(--text-secondary);">Essay (Max 300)</label>
+                                <input type="number" id="calc-essay" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" value="170" min="0" max="300">
+                            </div>
+                            <div>
+                                <label class="block text-xs mb-1" style="color: var(--text-secondary);">Interview (Max 120)</label>
+                                <input type="number" id="calc-interview" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" value="75" min="0" max="120">
+                            </div>
+                        </div>
+                        <button id="calc-btn" class="btn-primary p-2 mt-2 rounded font-bold text-center" data-i18n="calcCalculate">Calculate Net Score</button>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="flex flex-col justify-center items-center p-6 rounded-xl" style="background-color: var(--bg-surface); border: 1px solid var(--border);">
+                        <div class="text-sm mb-2" style="color: var(--text-secondary);">Projected Total Merit</div>
+                        <div id="calc-result-total" class="text-5xl font-bold mb-4" style="color: var(--text-primary);">--</div>
+                        
+                        <div class="grid grid-cols-2 gap-4 w-full text-center text-sm border-t pt-4" style="border-color: var(--border);">
+                            <div>
+                                <div style="color: var(--text-secondary);">Written (out of 900)</div>
+                                <div id="calc-result-written" class="font-bold" style="color: var(--text-primary);">--</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--text-secondary);">Gap to Rank 1 (593)</div>
+                                <div id="calc-result-gap" class="font-bold" style="color: var(--text-primary);">--</div>
+                            </div>
+                        </div>
+                        
+                        <div id="calc-status" class="mt-4 px-3 py-1 rounded-full text-sm font-bold opacity-0 transition-opacity">
+                            Status
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. MERIT BREAKDOWN -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="mainsPatternTitle">Merit Score Breakdown & Qualifying Papers</h2>
+            <div id="mains-papers-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+        <!-- 8. MAINS CUTOFF TABLE -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="mainsCutoffTableTitle">Category-Wise Historical Mains Final Cutoffs (Out of 1020)</h2>
+            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="mainsCutoffTableDesc">Final selection cutoffs after Mains written exam and Interview for 68th, 69th, and 70th BPSC CCE.</p>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Exam Edition</th>
+                                <th class="p-3 border-b cat-ur" style="border-color: var(--border);">UR(M)</th>
+                                <th class="p-3 border-b cat-ur-fem" style="border-color: var(--border);">UR(F)</th>
+                                <th class="p-3 border-b cat-ews" style="border-color: var(--border);">EWS(M)</th>
+                                <th class="p-3 border-b cat-ews-fem" style="border-color: var(--border);">EWS(F)</th>
+                                <th class="p-3 border-b cat-bc" style="border-color: var(--border);">BC</th>
+                                <th class="p-3 border-b cat-ebc" style="border-color: var(--border);">EBC</th>
+                                <th class="p-3 border-b cat-sc" style="border-color: var(--border);">SC</th>
+                                <th class="p-3 border-b cat-st" style="border-color: var(--border);">ST</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mains-cutoff-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. MAINS SYLLABUS TABLE -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="mainsSyllabusTitle">Mains Syllabus & High-Yield Marks Distribution</h2>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Paper</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Marks</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Weightage</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Syllabus Topics</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">High-Scoring Focus Areas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mains-syllabus-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. MAINS RESOURCE TABLE -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="mainsResourceTitle">Ultra-Focused Mains Resource Stack (Target >80% Score)</h2>
+            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="mainsResourceDesc">Hyper-focused study stack for GS 1, GS 2, and Essay paper preparation.</p>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Paper</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Recommended Primary Sources</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Preparation Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mains-resource-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. BIHAR PROVERBS LIBRARY -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="proverbsTitle">Bihar Cultural Proverbs Library for Essay Section 3 (100 Marks)</h2>
+            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="proverbsDesc">Curated collection of traditional Bihar proverbs in Devanagari script with contextual meanings for Section 3 of the 300-mark Essay paper.</p>
+            <div id="bihar-proverbs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js?v=4.0"></script>
+    <script src="js/navbar.js?v=4.0"></script>
+    <script>
+        function renderPageContent() {
+            if (!window.BPSCData) return;
+            
+            const isHi = window.BPSCData.currentLang === 'HI';
+
+            // 1. Render Toppers
+            const toppersTbody = document.getElementById('toppers-grid');
+            if (toppersTbody && window.BPSCData.topperBlueprintData) {
+                toppersTbody.innerHTML = '';
+                window.BPSCData.topperBlueprintData.forEach(row => {
+                    const div = document.createElement('div');
+                    const isRank1 = row.rank === 'Rank 1';
+                    div.className = `card p-5 rounded-xl flex flex-col gap-2`;
+                    if (isRank1) {
+                        div.style.border = '2px solid var(--accent)';
+                    }
+                    
+                    const nameText = isHi && row.nameHi ? row.nameHi : row.name;
+                    div.innerHTML = `
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg" style="color: var(--text-primary);">${row.rank}</span>
+                            <span class="font-bold text-xl" style="color: ${isRank1 ? 'var(--accent)' : 'var(--text-primary)'};">${row.totalMarks}/1020</span>
+                        </div>
+                        <div class="font-semibold" style="color: var(--text-secondary);">${nameText}</div>
+                    `;
+                    toppersTbody.appendChild(div);
+                });
+            }
+
+            // 2. Render Score comparison matrix
+            const matrixGrid = document.getElementById('mains-matrix-grid');
+            if (matrixGrid && window.BPSCData.mainsBenchmarkMatrix) {
+                matrixGrid.innerHTML = '';
+                window.BPSCData.mainsBenchmarkMatrix.forEach(item => {
+                    const paperText = isHi && item.paperHi ? item.paperHi : item.paper;
+                    const insightText = isHi && item.insightHi ? item.insightHi : item.insight;
+                    
+                    const div = document.createElement('div');
+                    div.className = 'card p-5 rounded-xl flex flex-col gap-3';
+                    div.innerHTML = `
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="font-bold text-base" style="color: var(--text-primary);">${paperText}</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="pill-top">Top: ${item.topScore}</span>
+                            <span class="pill-high">High: ${item.highScore}</span>
+                            <span class="pill-good">Good: ${item.goodScore}</span>
+                        </div>
+                        <p class="text-xs leading-relaxed" style="color: var(--text-secondary);">${insightText}</p>
+                    `;
+                    matrixGrid.appendChild(div);
+                });
+            }
+
+            // 3. Render Mains Papers Merit Breakdown
+            const papersGrid = document.getElementById('mains-papers-grid');
+            if (papersGrid && window.BPSCData.mainsPapers) {
+                papersGrid.innerHTML = '';
+                window.BPSCData.mainsPapers.forEach(paper => {
+                    const nameText = isHi && paper.nameHi ? paper.nameHi : paper.name;
+                    
+                    const div = document.createElement('div');
+                    div.className = 'card p-4 rounded-xl flex flex-col gap-2';
+                    div.innerHTML = `
+                        <span class="badge-secondary self-start">${paper.code}</span>
+                        <h3 class="text-xl font-bold" style="color: var(--text-primary);">${paper.marks} Marks</h3>
+                        <p class="text-xs" style="color: var(--text-secondary); font-weight: 500;">${nameText}</p>
+                    `;
+                    papersGrid.appendChild(div);
+                });
+            }
+
+            // 4. Render Cutoff Table
+            const cutoffTbody = document.getElementById('mains-cutoff-table');
+            if (cutoffTbody && window.BPSCData.mainsCutoffs) {
+                cutoffTbody.innerHTML = '';
+                window.BPSCData.mainsCutoffs.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-bold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${row.edition}</td>
+                        <td class="p-3 border-b cat-ur" style="border-color: var(--border);">${row.urMale || '-'}</td>
+                        <td class="p-3 border-b cat-ur-fem" style="border-color: var(--border);">${row.urFem || '-'}</td>
+                        <td class="p-3 border-b cat-ews" style="border-color: var(--border);">${row.ewsMale || '-'}</td>
+                        <td class="p-3 border-b cat-ews-fem" style="border-color: var(--border);">${row.ewsFem || '-'}</td>
+                        <td class="p-3 border-b cat-bc" style="border-color: var(--border);">${row.bc || '-'}</td>
+                        <td class="p-3 border-b cat-ebc" style="border-color: var(--border);">${row.ebc || '-'}</td>
+                        <td class="p-3 border-b cat-sc" style="border-color: var(--border);">${row.sc || '-'}</td>
+                        <td class="p-3 border-b cat-st" style="border-color: var(--border);">${row.st || '-'}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-tertiary); font-size: 0.875rem;">${row.notes || '-'}</td>
+                    `;
+                    cutoffTbody.appendChild(tr);
+                });
+            }
+
+            // 5. Render Syllabus Table
+            const syllabusTbody = document.getElementById('mains-syllabus-table');
+            if (syllabusTbody && window.BPSCData.mainsPapers) {
+                syllabusTbody.innerHTML = '';
+                window.BPSCData.mainsPapers.forEach(paper => {
+                    const tr = document.createElement('tr');
+                    
+                    const nameText = isHi && paper.nameHi ? paper.nameHi : paper.name;
+                    const topicsText = isHi && paper.topicsHi ? paper.topicsHi : paper.topics;
+                    const keyFocusText = paper.keyFocus; // String field, no HI translation present
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${nameText}</td>
+                        <td class="p-3 border-b font-bold text-accent" style="border-color: var(--border);">${paper.marks}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary);">${paper.pct}</td>
+                        <td class="p-3 border-b text-xs leading-relaxed" style="border-color: var(--border); color: var(--text-primary);">${topicsText}</td>
+                        <td class="p-3 border-b text-xs leading-relaxed" style="border-color: var(--border); color: var(--text-secondary);">${keyFocusText || '-'}</td>
+                    `;
+                    syllabusTbody.appendChild(tr);
+                });
+            }
+
+            // 6. Render Resource Table
+            const resourceTbody = document.getElementById('mains-resource-table');
+            if (resourceTbody && window.BPSCData.mainsResources) {
+                resourceTbody.innerHTML = '';
+                window.BPSCData.mainsResources.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    const paperText = isHi && row.paperHi ? row.paperHi : row.paper;
+                    const sourcesText = isHi && row.sourcesHi ? row.sourcesHi : row.sources;
+                    const strategyText = row.strategy; // Only english field exists
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${paperText}</td>
+                        <td class="p-3 border-b text-xs leading-relaxed" style="border-color: var(--border); color: var(--text-primary);">${sourcesText}</td>
+                        <td class="p-3 border-b text-xs leading-relaxed" style="border-color: var(--border); color: var(--text-secondary);">${strategyText}</td>
+                    `;
+                    resourceTbody.appendChild(tr);
+                });
+            }
+
+            // 7. Render Bihar Proverbs Grid
+            const proverbsGrid = document.getElementById('bihar-proverbs-grid');
+            if (proverbsGrid && window.BPSCData.biharProverbs) {
+                proverbsGrid.innerHTML = '';
+                window.BPSCData.biharProverbs.forEach(row => {
+                    const div = document.createElement('div');
+                    div.className = 'card p-5 rounded-xl flex flex-col gap-2.5';
+                    
+                    const meaningText = isHi && row.meaningHi ? row.meaningHi : row.meaningEn;
+                    const contextText = row.essayContext; // Only English exists
+                    
+                    div.innerHTML = `
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold text-accent">${row.proverbHi}</span>
+                            <span class="text-xs italic" style="color: var(--text-tertiary);">${row.proverbEn}</span>
+                        </div>
+                        <div class="text-xs leading-relaxed" style="color: var(--text-primary);">
+                            <strong>Meaning:</strong> ${meaningText}
+                        </div>
+                        <div class="text-xs leading-relaxed" style="color: var(--text-secondary);">
+                            <strong>Context:</strong> ${contextText}
+                        </div>
+                    `;
+                    proverbsGrid.appendChild(div);
+                });
+            }
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Listen for language changes from navbar
+            document.addEventListener('languageChanged', renderPageContent);
+            
+            // Initial render
+            setTimeout(renderPageContent, 100);
+
+            // Calculator Logic
+            const calcBtn = document.getElementById('calc-btn');
+            if (calcBtn) {
+                calcBtn.addEventListener('click', () => {
+                    const gs1 = parseInt(document.getElementById('calc-gs1').value) || 0;
+                    const gs2 = parseInt(document.getElementById('calc-gs2').value) || 0;
+                    const essay = parseInt(document.getElementById('calc-essay').value) || 0;
+                    const interview = parseInt(document.getElementById('calc-interview').value) || 0;
+                    
+                    const written = gs1 + gs2 + essay;
+                    const total = written + interview;
+                    const gap = total - 593;
+                    
+                    document.getElementById('calc-result-total').textContent = total;
+                    document.getElementById('calc-result-written').textContent = written;
+                    
+                    const gapEl = document.getElementById('calc-result-gap');
+                    if (gap >= 0) {
+                        gapEl.textContent = `+${gap} (Above Topper)`;
+                        gapEl.style.color = 'var(--color-top)';
+                    } else {
+                        gapEl.textContent = `${gap} marks`;
+                        gapEl.style.color = 'var(--accent)';
+                    }
+                    
+                    const statusEl = document.getElementById('calc-status');
+                    statusEl.classList.remove('opacity-0');
+                    
+                    if (total >= 575) {
+                        statusEl.textContent = 'Excellent (Top 10 Rank)';
+                        statusEl.style.backgroundColor = 'var(--color-top)';
+                        statusEl.style.color = '#fff';
+                    } else if (total >= 528) {
+                        statusEl.textContent = 'Safe Qualified Zone';
+                        statusEl.style.backgroundColor = 'var(--color-good)';
+                        statusEl.style.color = '#fff';
+                    } else {
+                        statusEl.textContent = 'Below Topper Cutoff';
+                        statusEl.style.backgroundColor = 'var(--cat-ur)';
+                        statusEl.style.color = '#fff';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
