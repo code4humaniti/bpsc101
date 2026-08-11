@@ -35,4 +35,10 @@ python3 -m http.server 8080
 # Option 2: Node.js serve
 npx serve ./ -p 8080
 ```
-Then open **`http://localhost:8080`** in your browser.
+
+---
+
+## 🌐 Publishing & Deployment
+
+For instructions on how to publish the portal live on the web for free, check out the [Publishing & Hosting Guide](file:///home/human/workspace/bpsc101/docs/publish.md).
+
