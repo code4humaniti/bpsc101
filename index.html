@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPSC 101 — Prelims Hub</title>
+
+    <!-- FOUC Prevention -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('bpsc_theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CDN for layout only -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            corePlugins: {
+                preflight: true,
+            }
+        }
+    </script>
+
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="css/styles.css?v=4.0">
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: var(--bg-page); color: var(--text-primary);">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
+        
+        <!-- 1. HERO SECTION -->
+        <section class="mb-10 text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="prelimsTitle">BPSC Prelims</h1>
+            <p class="text-lg sm:text-xl" style="color: var(--text-secondary);" data-i18n="prelimsDesc">Comprehensive hub for Prelims preparation, previous year cutoffs, weightage, and safe score tracking.</p>
+        </section>
+
+        <!-- 2. EXAM PATTERN -->
+        <section class="mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="card p-4 rounded-xl flex flex-col justify-center items-center sm:items-start">
+                    <span class="text-sm mb-1" style="color: var(--text-secondary);" data-i18n="patternFormat">Question Format</span>
+                    <span class="text-xl font-bold" style="color: var(--text-primary);" data-i18n="patternFormatVal">4 Options (A-D)</span>
+                </div>
+                <div class="card p-4 rounded-xl flex flex-col justify-center items-center sm:items-start">
+                    <span class="text-sm mb-1" style="color: var(--text-secondary);" data-i18n="patternPenalty">Penalty</span>
+                    <span class="text-xl font-bold" style="color: var(--text-primary);" data-i18n="patternPenaltyVal">1/3rd (-0.33)</span>
+                </div>
+                <div class="card p-4 rounded-xl flex flex-col justify-center items-center sm:items-start">
+                    <span class="text-sm mb-1" style="color: var(--text-secondary);" data-i18n="patternTotal">Total</span>
+                    <span class="text-xl font-bold" style="color: var(--text-primary);" data-i18n="patternTotalVal">150 M / 150 Q / 2 H</span>
+                </div>
+                <div class="card p-4 rounded-xl flex flex-col justify-center items-center sm:items-start">
+                    <span class="text-sm mb-1" style="color: var(--text-secondary);" data-i18n="patternCutoff">Cutoff Target</span>
+                    <span class="text-xl font-bold" style="color: var(--text-primary);" data-i18n="patternCutoffVal">91-92 (UR M)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CUTOFF TABLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="cutoffTitle">Historical Cutoffs</h2>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Exam Edition</th>
+                                <th class="p-3 border-b cat-ur" style="border-color: var(--border);">UR(M)</th>
+                                <th class="p-3 border-b cat-ur-fem" style="border-color: var(--border);">UR(F)</th>
+                                <th class="p-3 border-b cat-ews" style="border-color: var(--border);">EWS(M)</th>
+                                <th class="p-3 border-b cat-ews-fem" style="border-color: var(--border);">EWS(F)</th>
+                                <th class="p-3 border-b cat-bc" style="border-color: var(--border);">BC</th>
+                                <th class="p-3 border-b cat-ebc" style="border-color: var(--border);">EBC</th>
+                                <th class="p-3 border-b cat-sc" style="border-color: var(--border);">SC</th>
+                                <th class="p-3 border-b cat-st" style="border-color: var(--border);">ST</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prelims-cutoff-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SUBJECT WEIGHTAGE TABLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="weightageTitle">Subject Weightage</h2>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Subject</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Avg Qs</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Weightage</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Priority</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Focus Areas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prelims-weightage-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RESOURCE STACK TABLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="resourceTitle">Resource Stack</h2>
+            <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
+                <div class="overflow-x-auto">
+                    <table class="data-table w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Subject</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Primary Source</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Practice Tool</th>
+                                <th class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); background-color: var(--bg-surface);">Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody id="prelims-resource-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SAFE-SCORE CALCULATOR -->
+        <section class="mb-12">
+            <div class="card p-6 rounded-xl">
+                <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);" data-i18n="calcTitle">Safe-Score Calculator</h2>
+                <p class="mb-6" style="color: var(--text-secondary);" data-i18n="calcDesc">Estimate your net score based on expected attempts and incorrect answers (1/3rd penalty).</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Inputs -->
+                    <div class="flex flex-col gap-4">
+                        <div>
+                            <label class="block text-sm mb-1" style="color: var(--text-secondary);" data-i18n="calcAttempts">Total Attempts</label>
+                            <input type="number" id="calc-attempts" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" placeholder="e.g. 130" min="0" max="150">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1" style="color: var(--text-secondary);" data-i18n="calcWrong">Expected Wrong</label>
+                            <input type="number" id="calc-wrong" class="w-full p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border); color: var(--text-primary);" placeholder="e.g. 25" min="0" max="150">
+                        </div>
+                        <button id="calc-btn" class="btn-primary p-2 mt-2 rounded font-bold text-center" data-i18n="calcBtn">Calculate Net Score</button>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="flex flex-col justify-center items-center p-6 rounded-xl" style="background-color: var(--bg-surface); border: 1px solid var(--border);">
+                        <div class="text-sm mb-2" style="color: var(--text-secondary);" data-i18n="calcNet">Net Score</div>
+                        <div id="calc-result-net" class="text-5xl font-bold mb-4" style="color: var(--text-primary);">--</div>
+                        
+                        <div class="grid grid-cols-2 gap-4 w-full text-center text-sm border-t pt-4" style="border-color: var(--border);">
+                            <div>
+                                <div style="color: var(--text-secondary);" data-i18n="calcCorrect">Correct Marks</div>
+                                <div id="calc-result-correct" class="font-bold" style="color: var(--text-primary);">--</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--text-secondary);" data-i18n="calcPenalty">Penalty</div>
+                                <div id="calc-result-penalty" class="font-bold" style="color: var(--text-primary);">--</div>
+                            </div>
+                        </div>
+                        
+                        <div id="calc-status" class="mt-4 px-3 py-1 rounded-full text-sm font-bold opacity-0 transition-opacity">
+                            Status
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js?v=4.0"></script>
+    <script src="js/navbar.js?v=4.0"></script>
+    <script>
+        function renderPageContent() {
+            if (!window.BPSCData) return;
+            
+            const isHi = window.BPSCData.currentLang === 'HI';
+            
+            // 1. Render Cutoff Table
+            const cutoffTbody = document.getElementById('prelims-cutoff-table');
+            if (cutoffTbody && window.BPSCData.prelimsCutoffs) {
+                cutoffTbody.innerHTML = '';
+                window.BPSCData.prelimsCutoffs.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    const notesText = isHi && row.notesHi ? row.notesHi : row.notes;
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-bold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${row.edition}</td>
+                        <td class="p-3 border-b cat-ur" style="border-color: var(--border);">${row.urMale || '-'}</td>
+                        <td class="p-3 border-b cat-ur-fem" style="border-color: var(--border);">${row.urFem || '-'}</td>
+                        <td class="p-3 border-b cat-ews" style="border-color: var(--border);">${row.ewsMale || '-'}</td>
+                        <td class="p-3 border-b cat-ews-fem" style="border-color: var(--border);">${row.ewsFem || '-'}</td>
+                        <td class="p-3 border-b cat-bc" style="border-color: var(--border);">${row.bc || '-'}</td>
+                        <td class="p-3 border-b cat-ebc" style="border-color: var(--border);">${row.ebc || '-'}</td>
+                        <td class="p-3 border-b cat-sc" style="border-color: var(--border);">${row.sc || '-'}</td>
+                        <td class="p-3 border-b cat-st" style="border-color: var(--border);">${row.st || '-'}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-tertiary); font-size: 0.875rem;">${notesText || '-'}</td>
+                    `;
+                    cutoffTbody.appendChild(tr);
+                });
+            }
+
+            // 2. Render Weightage Table
+            const weightageTbody = document.getElementById('prelims-weightage-table');
+            if (weightageTbody && window.BPSCData.prelimsWeightage) {
+                weightageTbody.innerHTML = '';
+                window.BPSCData.prelimsWeightage.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    const subjText = isHi && row.subjectHi ? row.subjectHi : row.subject;
+                    const focusText = row.focus;
+                    const priorityClass = row.isHighYield ? 'badge-high-yield' : 'badge-secondary';
+                    const priorityText = row.isHighYield ? '🔥 High Yield' : 'Secondary';
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${subjText}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-primary);">${row.avgQs}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-primary);">${row.pct}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border);">
+                            <span class="px-2 py-1 text-xs rounded-full ${priorityClass}">${priorityText}</span>
+                        </td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); font-size: 0.875rem;">${focusText}</td>
+                    `;
+                    weightageTbody.appendChild(tr);
+                });
+            }
+
+            // 3. Render Resource Stack Table
+            const resourceTbody = document.getElementById('prelims-resource-table');
+            if (resourceTbody && window.BPSCData.prelimsResources) {
+                resourceTbody.innerHTML = '';
+                window.BPSCData.prelimsResources.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    const subjText = isHi && row.subjectHi ? row.subjectHi : row.subject;
+                    const sourceText = isHi && row.primarySourceHi ? row.primarySourceHi : row.primarySource;
+                    const practiceText = isHi && row.practiceToolHi ? row.practiceToolHi : row.practiceTool;
+                    const strategyText = row.strategyTip;
+                    
+                    tr.innerHTML = `
+                        <td class="p-3 border-b font-semibold" style="border-color: var(--border); color: var(--text-primary); background-color: var(--bg-surface);">${subjText}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-primary);">${sourceText}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary);">${practiceText}</td>
+                        <td class="p-3 border-b" style="border-color: var(--border); color: var(--text-secondary); font-size: 0.875rem;">${strategyText}</td>
+                    `;
+                    resourceTbody.appendChild(tr);
+                });
+            }
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Listen for language changes from navbar
+            document.addEventListener('languageChanged', renderPageContent);
+            
+            // Initial render
+            setTimeout(renderPageContent, 100);
+
+            // Calculator Logic
+            const calcBtn = document.getElementById('calc-btn');
+            if (calcBtn) {
+                calcBtn.addEventListener('click', () => {
+                    const attempts = parseInt(document.getElementById('calc-attempts').value) || 0;
+                    const wrong = parseInt(document.getElementById('calc-wrong').value) || 0;
+                    
+                    if (attempts === 0) return;
+                    
+                    const correct = attempts - wrong;
+                    const penalty = (wrong * 0.3333).toFixed(2);
+                    const net = (correct - penalty).toFixed(2);
+                    
+                    document.getElementById('calc-result-net').textContent = net;
+                    document.getElementById('calc-result-correct').textContent = correct;
+                    document.getElementById('calc-result-penalty').textContent = penalty;
+                    
+                    const statusEl = document.getElementById('calc-status');
+                    statusEl.classList.remove('opacity-0');
+                    
+                    const netNum = parseFloat(net);
+                    
+                    if (netNum >= 91.5) {
+                        statusEl.textContent = 'Safe Zone';
+                        statusEl.style.backgroundColor = 'var(--color-top)';
+                        statusEl.style.color = '#fff';
+                    } else if (netNum >= 81) {
+                        statusEl.textContent = 'Borderline';
+                        statusEl.style.backgroundColor = 'var(--color-good)';
+                        statusEl.style.color = '#fff';
+                    } else {
+                        statusEl.textContent = 'High Risk';
+                        statusEl.style.backgroundColor = 'var(--cat-ur)'; // Reddish in original schema
+                        statusEl.style.color = '#fff';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
