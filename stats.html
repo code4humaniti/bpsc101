@@ -73,16 +73,16 @@
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
                         <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
-                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Total Questions</span>
-                            <span class="text-xl font-bold text-accent">4 Qs (Solve 2)</span>
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);" data-i18n="statsTotalQs">Total Questions</span>
+                            <span class="text-xl font-bold text-accent" data-i18n="statsTotalQsVal">4 Qs (Solve 2)</span>
                         </div>
                         <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
-                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Total Weightage</span>
-                            <span class="text-xl font-bold text-accent">72 / 300 Marks</span>
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);" data-i18n="statsTotalWeightage">Total Weightage</span>
+                            <span class="text-xl font-bold text-accent" data-i18n="statsTotalWeightageVal">72 / 300 Marks</span>
                         </div>
                         <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
-                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Time Recommended</span>
-                            <span class="text-xl font-bold text-accent">40 - 45 Minutes</span>
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);" data-i18n="statsTimeRecommended">Time Recommended</span>
+                            <span class="text-xl font-bold text-accent" data-i18n="statsTimeRecommendedVal">40 - 45 Minutes</span>
                         </div>
                     </div>
                 </section>
@@ -90,66 +90,16 @@
                 <!-- 4. TECHNICAL CURRICULUM -->
                 <section id="stats-curriculum" class="scroll-mt-16 flex flex-col gap-4">
                     <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="statsCurriculumTitle">🎓 Technical Curriculum (What to Master)</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Data Types -->
-                        <div class="card p-5 rounded-xl flex flex-col gap-3">
-                            <h3 class="font-bold text-accent" style="font-size: 1.05rem;">📊 Data Representation Types</h3>
-                            <ul class="list-disc pl-5 flex flex-col gap-2 text-xs" style="color: var(--text-primary);">
-                                <li><strong>Line Graphs & Time Series:</strong> Identifying trends across periods, points of inflection.</li>
-                                <li><strong>Bar Charts:</strong> Simple, Stacked, and Grouped representations comparing multiple dimensions.</li>
-                                <li><strong>Pie Charts:</strong> Single & Dual Pie charts, Angle-to-Percentage conversion ($\text{Value} = \frac{\theta}{360} \times \text{Total}$).</li>
-                                <li><strong>Tabular Data:</strong> Reading complex multi-column matrix tables accurately without misalignment.</li>
-                                <li><strong>Mixed Diagrams:</strong> Combos of Pie Chart + Table, or Line Graph + Bar Chart.</li>
-                            </ul>
-                        </div>
-                        <!-- Core Math Concepts -->
-                        <div class="card p-5 rounded-xl flex flex-col gap-3">
-                            <h3 class="font-bold text-accent" style="font-size: 1.05rem;">🧮 Mathematical Core Concepts</h3>
-                            <ul class="list-disc pl-5 flex flex-col gap-2 text-xs" style="color: var(--text-primary);">
-                                <li><strong>Percentages:</strong> Net change, Percentage Increase/Decrease ($\frac{\text{Diff}}{\text{Original}} \times 100$).</li>
-                                <li><strong>Ratio & Proportion:</strong> Share division, standard simplifications, cross-comparisons.</li>
-                                <li><strong>Averages:</strong> Simple averages and Weighted averages ($\frac{\sum w_i x_i}{\sum w_i}$).</li>
-                                <li><strong>Business Math:</strong> Profit & loss percentages, cost price, selling price, and profit margins.</li>
-                                <li><strong>Growth Rates:</strong> CAGR vs. Simple annual growth rate (SARG) analysis.</li>
-                            </ul>
-                        </div>
+                    <div id="stats-curriculum-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Rendered dynamically -->
                     </div>
                 </section>
 
                 <!-- 5. STEP-BY-STEP EXECUTION PLAN -->
                 <section id="stats-execution" class="scroll-mt-16 flex flex-col gap-4">
                     <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="statsExecutionTitle">⚡ Step-by-Step Execution Plan</h2>
-                    <div class="grid grid-cols-1 gap-4">
-                        <div class="card p-4 rounded-xl flex items-start gap-4">
-                            <span class="font-bold text-lg text-accent">1</span>
-                            <div>
-                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Rigorous Calculation Standards</h3>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody1">Show every intermediate step. Direct answers without calculation steps lose marks.</p>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody2">Standardize units (e.g., converting Crores, Lakhs, Metric Tonnes accurately).</p>
-                            </div>
-                        </div>
-                        <div class="card p-4 rounded-xl flex items-start gap-4">
-                            <span class="font-bold text-lg text-accent">2</span>
-                            <div>
-                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Question Selection Strategy</h3>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody3">Spend the first 2 minutes scanning all 4 questions. Pick questions with simple arithmetic calculations and clear data over ambiguous graph readings.</p>
-                            </div>
-                        </div>
-                        <div class="card p-4 rounded-xl flex items-start gap-4">
-                            <span class="font-bold text-lg text-accent">3</span>
-                            <div>
-                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Clean Visual Presentation</h3>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody4">Draw neat tables for calculated data before answering sub-questions.</p>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody5">Clearly highlight final answers in boxed sub-headings.</p>
-                            </div>
-                        </div>
-                        <div class="card p-4 rounded-xl flex items-start gap-4">
-                            <span class="font-bold text-lg text-accent">4</span>
-                            <div>
-                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Tool & PYQ Mastery Stack</h3>
-                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody6">Practice past 10–15 years of BPSC Statistics PYQs under timed conditions.</p>
-                            </div>
-                        </div>
+                    <div id="stats-steps-container" class="grid grid-cols-1 gap-4">
+                        <!-- Rendered dynamically -->
                     </div>
                 </section>
 
@@ -165,8 +115,59 @@
     <script src="js/navbar.js?v=4.0"></script>
     <script>
         function renderPageContent() {
-            // Stats page is static content rendered via data-i18n, but if custom triggers are needed they can be defined here.
+            if (!window.BPSCData) return;
+            const isHi = (window.BPSCData.currentLang || 'EN') === 'HI';
+
+            // 1. Render Curriculum Card lists
+            const curriculumContainer = document.getElementById('stats-curriculum-container');
+            if (curriculumContainer && window.BPSCData.statsCurriculum) {
+                curriculumContainer.innerHTML = '';
+                window.BPSCData.statsCurriculum.forEach(card => {
+                    const titleText = isHi ? card.titleHi : card.titleEn;
+                    const cardDiv = document.createElement('div');
+                    cardDiv.className = 'card p-5 rounded-xl flex flex-col gap-3';
+                    
+                    let itemsHtml = `<ul class="list-disc pl-5 flex flex-col gap-2 text-xs" style="color: var(--text-primary);">`;
+                    card.items.forEach(item => {
+                        const itemText = isHi ? item.hi : item.en;
+                        itemsHtml += `<li>${itemText}</li>`;
+                    });
+                    itemsHtml += `</ul>`;
+
+                    cardDiv.innerHTML = `
+                        <h3 class="font-bold text-accent" style="font-size: 1.05rem;">${titleText}</h3>
+                        ${itemsHtml}
+                    `;
+                    curriculumContainer.appendChild(cardDiv);
+                });
+            }
+
+            // 2. Render Steps
+            const stepsContainer = document.getElementById('stats-steps-container');
+            if (stepsContainer && window.BPSCData.statsSteps) {
+                stepsContainer.innerHTML = '';
+                window.BPSCData.statsSteps.forEach(step => {
+                    const titleText = isHi ? step.titleHi : step.titleEn;
+                    const bodyText = isHi ? step.bodyHi : step.bodyEn;
+                    
+                    const stepDiv = document.createElement('div');
+                    stepDiv.className = 'card p-4 rounded-xl flex items-start gap-4';
+                    stepDiv.innerHTML = `
+                        <span class="font-bold text-lg text-accent">${step.step}</span>
+                        <div>
+                            <h3 class="font-semibold text-sm" style="color: var(--text-primary);">${titleText}</h3>
+                            <p class="text-xs mt-1" style="color: var(--text-secondary);">${bodyText}</p>
+                        </div>
+                    `;
+                    stepsContainer.appendChild(stepDiv);
+                });
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('languageChanged', renderPageContent);
+            setTimeout(renderPageContent, 100);
+        });
     </script>
 </body>
 </html>

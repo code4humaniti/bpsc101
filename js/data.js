@@ -114,7 +114,15 @@ window.BPSCData = {
       statsFormatTitle: "📝 Exam Format & Mark Distribution",
       statsFormatBody: "Candidates must solve 2 out of 4 long Data Interpretation questions (36 marks each) in GS Paper 1 Section III. Recommended duration is 40-45 minutes.",
       statsCurriculumTitle: "🎓 Technical Curriculum (What to Master)",
-      statsExecutionTitle: "⚡ Step-by-Step Execution Plan"
+      statsExecutionTitle: "⚡ Step-by-Step Execution Plan",
+
+      // Stats KPI labels
+      statsTotalQs: "Total Questions",
+      statsTotalQsVal: "4 Qs (Solve 2)",
+      statsTotalWeightage: "Total Weightage",
+      statsTotalWeightageVal: "72 / 300 Marks",
+      statsTimeRecommended: "Time Recommended",
+      statsTimeRecommendedVal: "40 - 45 Minutes"
     },
 
     HI: {
@@ -225,7 +233,15 @@ window.BPSCData = {
       statsFormatTitle: "📝 परीक्षा प्रारूप एवं अंक विभाजन",
       statsFormatBody: "अभ्यर्थियों को GS पेपर 1 के सेक्शन III में 4 दीर्घ डेटा इंटरप्रिटेशन प्रश्नों में से 2 प्रश्नों को हल करना होता है (प्रत्येक 36 अंक)। अनुशंसित समय 40-45 मिनट है।",
       statsCurriculumTitle: "🎓 तकनीकी पाठ्यक्रम (क्या सीखें)",
-      statsExecutionTitle: "⚡ चरण-दर-चरण क्रियान्वयन योजना"
+      statsExecutionTitle: "⚡ चरण-दर-चरण क्रियान्वयन योजना",
+
+      // Stats KPI labels
+      statsTotalQs: "कुल प्रश्न",
+      statsTotalQsVal: "4 प्रश्न (2 हल करें)",
+      statsTotalWeightage: "कुल भारांक",
+      statsTotalWeightageVal: "72 / 300 अंक",
+      statsTimeRecommended: "अनुशंसित समय",
+      statsTimeRecommendedVal: "40 - 45 मिनट"
     }
   },
 
@@ -511,6 +527,94 @@ window.BPSCData = {
       essayContext: "Perfect for essays on local governance, Vocal for Local, promoting Bihar handicraft (Madhubani art, Manjusha), and regional tourism.",
       essayContextHi: "स्थानीय शासन, 'वोकल फॉर लोकल', बिहार हस्तशिल्प (मधुबनी कला, मंजूषा) को बढ़ावा देने और क्षेत्रीय पर्यटन पर निबंधों के लिए उपयुक्त।",
       tags: ["culture", "governance"]
+    }
+  ],
+
+  // GS-1 Statistics Masterclass Curriculum (Bilingual with clean math unicode representation)
+  statsCurriculum: [
+    {
+      titleEn: "📊 Data Representation Types",
+      titleHi: "📊 डेटा निरूपण के प्रकार (Data Types)",
+      items: [
+        {
+          en: "<strong>Line Graphs & Time Series:</strong> Identifying trends across periods, points of inflection.",
+          hi: "<strong>रेखा आरेख (Line Graphs) और समय श्रृंखला:</strong> विभिन्न अवधियों में प्रवृत्तियों और परिवर्तन बिंदुओं की पहचान करना।"
+        },
+        {
+          en: "<strong>Bar Charts:</strong> Simple, Stacked, and Grouped representations comparing multiple dimensions.",
+          hi: "<strong>दंड आरेख (Bar Charts):</strong> विभिन्न आयामों की तुलना करने वाले सरल, संचित (Stacked) और समूहबद्ध निरूपण।"
+        },
+        {
+          en: "<strong>Pie Charts:</strong> Single & Dual Pie variations, Angle-to-Percentage conversion: Value = (θ / 360°) × Total.",
+          hi: "<strong>वृत्त आरेख (Pie Charts):</strong> एकल और दोहरे वृत्त आरेख, कोण-से-प्रतिशत रूपांतरण: मान = (θ / 360°) × कुल।"
+        },
+        {
+          en: "<strong>Tabular Data:</strong> Reading complex multi-column matrix tables accurately without alignment errors.",
+          hi: "<strong>सारणीबद्ध डेटा (Tabular Data):</strong> बिना किसी संरेखण त्रुटि के जटिल बहु-स्तंभ मैट्रिक्स तालिकाओं को सटीकता से पढ़ना।"
+        },
+        {
+          en: "<strong>Mixed Diagrams:</strong> Combos of Pie Chart + Table, or Line Graph + Bar Chart.",
+          hi: "<strong>मिश्रित आरेख (Mixed Diagrams):</strong> पाई चार्ट + तालिका, या रेखा आरेख + दंड आरेख के संयोजन।"
+        }
+      ]
+    },
+    {
+      titleEn: "🧮 Mathematical Core Concepts",
+      titleHi: "🧮 मुख्य गणितीय अवधारणाएं (Math Concepts)",
+      items: [
+        {
+          en: "<strong>Percentages:</strong> Net change, Percentage Increase/Decrease: Change % = (Difference / Original) × 100.",
+          hi: "<strong>प्रतिशतता (Percentages):</strong> शुद्ध परिवर्तन, प्रतिशत वृद्धि/कमी: परिवर्तन % = (अंतर / मूल मान) × 100।"
+        },
+        {
+          en: "<strong>Ratio & Proportion:</strong> Share division, standard simplifications, cross-comparisons.",
+          hi: "<strong>अनुपात और समानुपात (Ratio & Proportion):</strong> हिस्सेदारी का विभाजन, मानक सरलीकरण, क्रॉस-तुलना।"
+        },
+        {
+          en: "<strong>Averages:</strong> Simple averages and Weighted averages: Average = Σ(wᵢ × xᵢ) / Σwᵢ.",
+          hi: "<strong>औसत (Averages):</strong> साधारण औसत और भारित औसत: औसत = Σ(wᵢ × xᵢ) / Σwᵢ।"
+        },
+        {
+          en: "<strong>Business Math:</strong> Profit & loss percentages, cost price, selling price, and profit margins.",
+          hi: "<strong>व्यावसायिक गणित (Business Math):</strong> लाभ और हानि प्रतिशत, क्रय मूल्य, विक्रय मूल्य और लाभ मार्जिन।"
+        },
+        {
+          en: "<strong>Growth Rates:</strong> CAGR vs. Simple annual growth rate (SARG) analysis.",
+          hi: "<strong>विकास दर (Growth Rates):</strong> चक्रवृद्धि वार्षिक वृद्धि दर (CAGR) बनाम सरल वार्षिक वृद्धि दर (SARG) का विश्लेषण।"
+        }
+      ]
+    }
+  ],
+
+  // GS-1 Statistics Steps
+  statsSteps: [
+    {
+      step: 1,
+      titleEn: "Rigorous Calculation Standards",
+      titleHi: "सख्त गणना मानक",
+      bodyEn: "Show every intermediate step. Direct answers without calculation steps lose marks.",
+      bodyHi: "प्रत्येक मध्यवर्ती गणना चरण दिखाएं। बिना गणना चरणों के सीधे उत्तर लिखने पर अंक कटते हैं।"
+    },
+    {
+      step: 2,
+      titleEn: "Question Selection Strategy",
+      titleHi: "प्रश्न चयन की रणनीति",
+      bodyEn: "Spend the first 2 minutes scanning all 4 questions. Pick questions with simple arithmetic calculations and clear data over ambiguous graph readings.",
+      bodyHi: "पहले 2 मिनट चारों प्रश्नों को स्कैन करने में लगाएं। संदिग्ध ग्राफ रीडिंग वाले प्रश्नों के स्थान पर सरल अंकगणितीय गणना और स्पष्ट डेटा वाले प्रश्नों को चुनें।"
+    },
+    {
+      step: 3,
+      titleEn: "Clean Visual Presentation",
+      titleHi: "स्पष्ट दृश्य प्रस्तुति",
+      bodyEn: "Draw neat tables for calculated data before answering sub-questions. Clearly highlight final answers in boxed sub-headings.",
+      bodyHi: "उप-प्रश्नों के उत्तर देने से पहले गणना की गई डेटा के लिए साफ तालिकाएं बनाएं। अंतिम उत्तरों को स्पष्ट रूप से बॉक्स में या रेखांकित करके हाइलाइट करें।"
+    },
+    {
+      step: 4,
+      titleEn: "Tool & PYQ Mastery Stack",
+      titleHi: "अभ्यास एवं PYQ महारत",
+      bodyEn: "Practice past 10–15 years of BPSC Statistics PYQs under timed conditions.",
+      bodyHi: "समय सीमा के भीतर पिछले 10-15 वर्षों के BPSC सांख्यिकी PYQs का अभ्यास करें।"
     }
   ]
 };
