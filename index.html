@@ -41,8 +41,15 @@
     <!-- Navbar -->
     <div id="navbar-container"></div>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
+    <!-- Layout Wrapper: Sidebar + Content -->
+    <div class="flex-grow flex flex-row w-full max-w-7xl mx-auto relative">
+        <!-- Sidebar -->
+        <aside id="sidebar-container" class="bpsc-sidebar-aside"></aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow min-w-0">
+            <!-- Main Content -->
+            <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
         
         <!-- 1. HERO SECTION -->
         <section class="mb-10 text-center sm:text-left">
@@ -51,7 +58,7 @@
         </section>
 
         <!-- 2. EXAM PATTERN -->
-        <section class="mb-12">
+        <section id="pattern" class="mb-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="card p-4 rounded-xl flex flex-col justify-center items-center sm:items-start">
                     <span class="text-sm mb-1" style="color: var(--text-secondary);" data-i18n="patternFormat">Question Format</span>
@@ -73,7 +80,7 @@
         </section>
 
         <!-- 3. CUTOFF TABLE -->
-        <section class="mb-12">
+        <section id="cutoffs" class="mb-12">
             <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="cutoffTitle">Historical Cutoffs</h2>
             <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
                 <div class="overflow-x-auto">
@@ -101,7 +108,7 @@
         </section>
 
         <!-- 4. SUBJECT WEIGHTAGE TABLE -->
-        <section class="mb-12">
+        <section id="weightage" class="mb-12">
             <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="weightageTitle">Subject Weightage</h2>
             <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
                 <div class="overflow-x-auto">
@@ -124,7 +131,7 @@
         </section>
 
         <!-- 5. RESOURCE STACK TABLE -->
-        <section class="mb-12">
+        <section id="resources" class="mb-12">
             <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);" data-i18n="resourceTitle">Resource Stack</h2>
             <div class="table-wrap rounded-xl border" style="border-color: var(--border-strong);">
                 <div class="overflow-x-auto">
@@ -146,7 +153,7 @@
         </section>
 
         <!-- 6. SAFE-SCORE CALCULATOR -->
-        <section class="mb-12">
+        <section id="calculator" class="mb-12">
             <div class="card p-6 rounded-xl">
                 <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);" data-i18n="calcTitle">Safe-Score Calculator</h2>
                 <p class="mb-6" style="color: var(--text-secondary);" data-i18n="calcDesc">Estimate your net score based on expected attempts and incorrect answers (1/3rd penalty).</p>
@@ -193,6 +200,8 @@
 
     <!-- Footer -->
     <div id="footer-container"></div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/data.js?v=4.0"></script>

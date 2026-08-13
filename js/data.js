@@ -87,7 +87,34 @@ window.BPSCData = {
       mainsResourceDesc: "Hyper-focused study stack for GS 1, GS 2, and Essay paper preparation.",
 
       proverbsTitle: "✍️ Bihar Cultural Proverbs Library for Essay Section 3 (100 Marks)",
-      proverbsDesc: "Curated collection of traditional Bihar proverbs in Devanagari script with contextual meanings for Section 3 of the 300-mark Essay paper."
+      proverbsDesc: "Curated collection of traditional Bihar proverbs in Devanagari script with contextual meanings for Section 3 of the 300-mark Essay paper.",
+
+      // Sidebar Navigation
+      sidebarPrelimsBlue: "Prelims Blueprint",
+      sidebarMainsBlue: "Mains Blueprint",
+      sidebarStrategy: "Strategy & Calculator",
+      sidebarSyllabus: "Syllabus & Resources",
+      sidebarEssay: "Essay & Proverbs",
+      sidebarStats: "Stats Masterclass",
+
+      // Tag Filter Labels
+      tagAll: "All",
+      tagHardwork: "Hard Work",
+      tagAgriculture: "Agriculture",
+      tagGovernance: "Governance",
+      tagEthics: "Ethics & Wisdom",
+      tagCulture: "Culture & Heritage",
+      tagSelfreliance: "Self-Reliance",
+
+      // Statistics Page
+      statsTitle: "GS-1 Statistics Masterclass (72/72 Guide)",
+      statsDesc: "A comprehensive strategic blueprint to secure a perfect score in BPSC GS-1 Section III (Data Interpretation).",
+      statsMindsetTitle: "💡 Core Mindset & Scoring Mechanics",
+      statsMindsetBody: "Subjective evaluation in GS-1 varies, but Statistics is purely mathematical. Scoring 72/72 builds an unbeatable lead over competitors.",
+      statsFormatTitle: "📝 Exam Format & Mark Distribution",
+      statsFormatBody: "Candidates must solve 2 out of 4 long Data Interpretation questions (36 marks each) in GS Paper 1 Section III. Recommended duration is 40-45 minutes.",
+      statsCurriculumTitle: "🎓 Technical Curriculum (What to Master)",
+      statsExecutionTitle: "⚡ Step-by-Step Execution Plan"
     },
 
     HI: {
@@ -171,7 +198,34 @@ window.BPSCData = {
       mainsResourceDesc: "GS 1, GS 2 एवं निबंध पत्र की तैयारी हेतु hyper-focused अध्ययन सामग्री।",
 
       proverbsTitle: "✍️ निबंध खंड 3 हेतु बिहार सांस्कृतिक कहावतें (100 अंक)",
-      proverbsDesc: "300 अंकों के निबंध पत्र के खंड 3 हेतु देवनागरी लिपि में पारंपरिक बिहार कहावतों एवं लोकोक्तियों का संकलन।"
+      proverbsDesc: "300 अंकों के निबंध पत्र के खंड 3 हेतु देवनागरी लिपि में पारंपरिक बिहार कहावतों एवं लोकोक्तियों का संकलन।",
+
+      // Sidebar Navigation
+      sidebarPrelimsBlue: "प्रीलिम्स ब्लूप्रिंट",
+      sidebarMainsBlue: "मेन्स ब्लूप्रिंट",
+      sidebarStrategy: "रणनीति व कैलकुलेटर",
+      sidebarSyllabus: "पाठ्यक्रम एवं स्रोत",
+      sidebarEssay: "निबंध व कहावतें",
+      sidebarStats: "सांख्यिकी मास्टरक्लास",
+
+      // Tag Filter Labels
+      tagAll: "सभी",
+      tagHardwork: "कठिन परिश्रम",
+      tagAgriculture: "कृषि",
+      tagGovernance: "प्रशासन",
+      tagEthics: "नैतिकता एवं ज्ञान",
+      tagCulture: "संस्कृति एवं विरासत",
+      tagSelfreliance: "आत्मनिर्भरता",
+
+      // Statistics Page
+      statsTitle: "GS-1 सांख्यिकी मास्टरक्लास (72/72 गाइड)",
+      statsDesc: "BPSC GS-1 सेक्शन III (डेटा इंटरप्रिटेशन) में शत-प्रतिशत अंक प्राप्त करने की विस्तृत रणनीति।",
+      statsMindsetTitle: "💡 मुख्य मानसिकता एवं अंक संरचना",
+      statsMindsetBody: "GS-1 के वर्णनात्मक प्रश्नों में अंक भिन्न हो सकते हैं, लेकिन सांख्यिकी विशुद्ध गणितीय है। 72/72 स्कोर करने से आप अन्य अभ्यर्थियों पर बढ़त बना सकते हैं।",
+      statsFormatTitle: "📝 परीक्षा प्रारूप एवं अंक विभाजन",
+      statsFormatBody: "अभ्यर्थियों को GS पेपर 1 के सेक्शन III में 4 दीर्घ डेटा इंटरप्रिटेशन प्रश्नों में से 2 प्रश्नों को हल करना होता है (प्रत्येक 36 अंक)। अनुशंसित समय 40-45 मिनट है।",
+      statsCurriculumTitle: "🎓 तकनीकी पाठ्यक्रम (क्या सीखें)",
+      statsExecutionTitle: "⚡ चरण-दर-चरण क्रियान्वयन योजना"
     }
   },
 
@@ -418,35 +472,45 @@ window.BPSCData = {
       proverbEn: "Bina Mawle Kaam Na Hola",
       meaningHi: "कड़ी मेहनत और प्रयास के बिना कोई भी लक्ष्य या सफलता प्राप्त नहीं होती।",
       meaningEn: "No goal or success can be achieved without hard work, effort, and perseverance.",
-      essayContext: "Relevant for essays on hard work, self-reliance, administrative dedication, and economic development of Bihar."
+      essayContext: "Relevant for essays on hard work, self-reliance, administrative dedication, and economic development of Bihar.",
+      essayContextHi: "कठिन परिश्रम, आत्मनिर्भरता, प्रशासनिक समर्पण और बिहार के आर्थिक विकास से संबंधित निबंधों के लिए प्रासंगिक।",
+      tags: ["hardwork", "selfreliance"]
     },
     {
       proverbHi: "खेती आपन सेती",
       proverbEn: "Kheti Aapan Seti",
       meaningHi: "कृषि या व्यवसाय में सफलता स्वयं की देखरेख और व्यक्तिगत जिम्मेदारी से ही संभव है।",
       meaningEn: "Success in agriculture, enterprise, or governance requires direct personal oversight and accountability.",
-      essayContext: "Ideal for essays on agriculture reforms, Bihar agrarian economy, farm management, and grassroots governance."
+      essayContext: "Ideal for essays on agriculture reforms, Bihar agrarian economy, farm management, and grassroots governance.",
+      essayContextHi: "कृषि सुधारों, बिहार की कृषि अर्थव्यवस्था, खेत प्रबंधन और जमीनी स्तर के प्रशासन पर निबंधों के लिए आदर्श।",
+      tags: ["agriculture", "selfreliance", "governance"]
     },
     {
       proverbHi: "अधजल गगरी छलकत जाए",
       proverbEn: "Adhjal Gagari Chhalkat Jaaye",
       meaningHi: "कम ज्ञान या अनुभव रखने वाला व्यक्ति अधिक दिखावा और घमंड करता है, जबकि ज्ञानी व्यक्ति गंभीर और शांत रहता है।",
       meaningEn: "A person with superficial knowledge makes the most noise, whereas a truly wise individual remains humble and composed.",
-      essayContext: "Useful for essays on education policy, intellectual humility, leadership qualities, and social awareness."
+      essayContext: "Useful for essays on education policy, intellectual humility, leadership qualities, and social awareness.",
+      essayContextHi: "शिक्षा नीति, बौद्धिक विनम्रता, नेतृत्व गुण और सामाजिक जागरूकता पर निबंधों के लिए उपयोगी।",
+      tags: ["ethics"]
     },
     {
       proverbHi: "बाप के नाम पर साग ना बिकाए",
       proverbEn: "Baap Ke Naam Par Saag Na Bikaaye",
       meaningHi: "पूर्वजों की ख्याति पर जीवन भर निर्भर नहीं रहा जा सकता; अपनी योग्यता और पहचान स्वयं बनानी पड़ती है।",
       meaningEn: "Inherited legacy alone cannot guarantee success; one must build personal competence, merit, and identity.",
-      essayContext: "Applicable for essays on meritocracy, youth empowerment, innovation, and breaking feudal structures."
+      essayContext: "Applicable for essays on meritocracy, youth empowerment, innovation, and breaking feudal structures.",
+      essayContextHi: "योग्यता-तंत्र (meritocracy), युवा सशक्तिकरण, नवाचार और सामंती संरचनाओं को तोड़ने से संबंधित निबंधों के लिए उपयुक्त।",
+      tags: ["hardwork", "selfreliance", "culture"]
     },
     {
       proverbHi: "आस-पास बसे देव, त ओकर पूजा कब?",
       proverbEn: "Aas-Paas Base Dev, Ta Okar Pooja Kab?",
       meaningHi: "पास की मूल्यवान वस्तुओं या स्थानीय प्रतिभाओं की उपेक्षा करना और दूर की वस्तुओं के पीछे भागना।",
       meaningEn: "Neglecting local resources, cultural heritage, and indigenous talents while seeking external solutions.",
-      essayContext: "Perfect for essays on local governance, Vocal for Local, promoting Bihar handicraft (Madhubani art, Manjusha), and regional tourism."
+      essayContext: "Perfect for essays on local governance, Vocal for Local, promoting Bihar handicraft (Madhubani art, Manjusha), and regional tourism.",
+      essayContextHi: "स्थानीय शासन, 'वोकल फॉर लोकल', बिहार हस्तशिल्प (मधुबनी कला, मंजूषा) को बढ़ावा देने और क्षेत्रीय पर्यटन पर निबंधों के लिए उपयुक्त।",
+      tags: ["culture", "governance"]
     }
   ]
 };

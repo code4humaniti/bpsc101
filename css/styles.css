@@ -351,3 +351,118 @@ input:focus, select:focus {
   h3.text-xl  { font-size: 1.05rem; }
 }
 
+/* ─────────────────────────────────────────
+   Sidebar Layout & Navigation Components
+   ───────────────────────────────────────── */
+.bpsc-sidebar-aside {
+  width: 240px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  flex-shrink: 0;
+  position: sticky;
+  top: 3.25rem; /* Height of the top navbar */
+  height: calc(100vh - 3.25rem);
+  overflow-y: auto;
+  z-index: 40;
+}
+
+.bpsc-sidebar-aside.collapsed {
+  width: 0;
+  margin-left: -240px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0.75rem;
+  gap: 0.25rem;
+}
+
+.sidebar-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.sidebar-link.active {
+  background-color: var(--bg-pill-active);
+  color: var(--text-pill-active);
+  font-weight: 600;
+}
+
+/* ── Proverb Filter Chips ── */
+.filter-chip {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.filter-chip.active {
+  background-color: var(--bg-pill-active);
+  color: var(--text-pill-active);
+  border-color: var(--bg-pill-active);
+}
+
+/* Mobile & Tablet overlays */
+@media (max-width: 1023px) {
+  .bpsc-sidebar-aside {
+    position: fixed;
+    top: 3.25rem;
+    left: 0;
+    height: calc(100vh - 3.25rem);
+    z-index: 90;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.05);
+    transform: translateX(0);
+    margin-left: 0;
+  }
+  
+  html.dark .bpsc-sidebar-aside {
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .bpsc-sidebar-aside.collapsed {
+    transform: translateX(-100%);
+    margin-left: 0;
+    opacity: 0;
+    width: 240px; /* Preserve width so animation works nicely */
+  }
+}
+
+

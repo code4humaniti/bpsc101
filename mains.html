@@ -41,8 +41,18 @@
     <!-- Navbar -->
     <div id="navbar-container"></div>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full flex flex-col gap-10">
+    <!-- Layout Wrapper: Sidebar + Content -->
+    <div class="flex-grow flex flex-row w-full max-w-7xl mx-auto relative">
+        <!-- Sidebar -->
+        <aside id="sidebar-container" class="bpsc-sidebar-aside"></aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow min-w-0">
+            <!-- Main Content -->
+            <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full flex flex-col gap-10">
+                
+                <!-- ZONE 1: STRATEGIC PLANNING -->
+                <div id="strategy" class="flex flex-col gap-10 scroll-mt-16">
         
         <!-- 1. HERO SECTION -->
         <section class="text-center sm:text-left flex flex-col gap-3">
@@ -151,6 +161,10 @@
             </div>
         </section>
 
+                </div> <!-- End Zone 1 -->
+
+                <!-- ZONE 2: SYLLABUS & RESOURCES -->
+                <div id="syllabus" class="flex flex-col gap-10 scroll-mt-16">
         <!-- 7. MERIT BREAKDOWN -->
         <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="mainsPatternTitle">Merit Score Breakdown & Qualifying Papers</h2>
@@ -233,19 +247,26 @@
             </div>
         </section>
 
+                </div> <!-- End Zone 2 -->
+
+                <!-- ZONE 3: ESSAY VAULT -->
+                <div id="essay" class="flex flex-col gap-10 scroll-mt-16">
         <!-- 11. BIHAR PROVERBS LIBRARY -->
-        <section class="flex flex-col gap-4">
-            <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="proverbsTitle">Bihar Cultural Proverbs Library for Essay Section 3 (100 Marks)</h2>
-            <p class="text-xs" style="color: var(--text-secondary);" data-i18n="proverbsDesc">Curated collection of traditional Bihar proverbs in Devanagari script with contextual meanings for Section 3 of the 300-mark Essay paper.</p>
+            <!-- Proverbs Filter Chips -->
+            <div class="flex flex-wrap gap-2 my-2" id="proverb-tags-container"></div>
+
             <div id="bihar-proverbs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Rendered dynamically -->
             </div>
         </section>
+                </div> <!-- End Zone 3 -->
 
     </main>
 
     <!-- Footer -->
     <div id="footer-container"></div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/data.js?v=4.0"></script>
@@ -389,35 +410,78 @@
                 });
             }
 
-            // 7. Render Bihar Proverbs Grid
+            // 7. Render Bihar Proverbs Grid with Tag Filtering
             const proverbsGrid = document.getElementById('bihar-proverbs-grid');
+            const tagsContainer = document.getElementById('proverb-tags-container');
+            
             if (proverbsGrid && window.BPSCData.biharProverbs) {
-                proverbsGrid.innerHTML = '';
                 const t = (window.BPSCData.translations && window.BPSCData.translations[window.BPSCData.currentLang || 'EN']) || {};
                 const meaningLabel = t.proverbMeaningLabel || 'Meaning';
                 const contextLabel = t.proverbContextLabel || 'Context';
+                
+                // Track active tag on window state so it persists across language toggles
+                if (typeof window.BPSCData.activeProverbTag === 'undefined') {
+                    window.BPSCData.activeProverbTag = 'all';
+                }
+                const activeTag = window.BPSCData.activeProverbTag;
 
-                window.BPSCData.biharProverbs.forEach(row => {
-                    const div = document.createElement('div');
-                    div.className = 'card p-5 rounded-xl flex flex-col gap-2.5';
-                    
-                    const meaningText = isHi && row.meaningHi ? row.meaningHi : row.meaningEn;
-                    const contextText = isHi && row.essayContextHi ? row.essayContextHi : row.essayContext;
-                    
-                    div.innerHTML = `
-                        <div class="flex flex-col">
-                            <span class="text-xl font-bold text-accent">${row.proverbHi}</span>
-                            <span class="text-xs italic" style="color: var(--text-tertiary);">${row.proverbEn}</span>
-                        </div>
-                        <div class="text-xs leading-relaxed" style="color: var(--text-primary);">
-                            <strong>${meaningLabel}:</strong> ${meaningText}
-                        </div>
-                        <div class="text-xs leading-relaxed" style="color: var(--text-secondary);">
-                            <strong>${contextLabel}:</strong> ${contextText}
-                        </div>
-                    `;
-                    proverbsGrid.appendChild(div);
+                // Render Filter Chips
+                if (tagsContainer) {
+                    const availableTags = [
+                        { key: 'all', labelKey: 'tagAll', defaultEn: 'All' },
+                        { key: 'hardwork', labelKey: 'tagHardwork', defaultEn: 'Hard Work' },
+                        { key: 'agriculture', labelKey: 'tagAgriculture', defaultEn: 'Agriculture' },
+                        { key: 'governance', labelKey: 'tagGovernance', defaultEn: 'Governance' },
+                        { key: 'ethics', labelKey: 'tagEthics', defaultEn: 'Ethics & Wisdom' },
+                        { key: 'culture', labelKey: 'tagCulture', defaultEn: 'Culture & Heritage' },
+                        { key: 'selfreliance', labelKey: 'tagSelfreliance', defaultEn: 'Self-Reliance' }
+                    ];
+
+                    tagsContainer.innerHTML = availableTags.map(tag => {
+                        const label = t[tag.labelKey] || tag.defaultEn;
+                        const activeClass = tag.key === activeTag ? 'active' : '';
+                        return `<button class="filter-chip ${activeClass}" data-tag="${tag.key}">${label}</button>`;
+                    }).join('');
+
+                    // Bind event listeners to chips
+                    tagsContainer.querySelectorAll('.filter-chip').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            window.BPSCData.activeProverbTag = e.target.getAttribute('data-tag');
+                            renderPageContent(); // Re-render content with the new filter
+                        });
+                    });
+                }
+
+                proverbsGrid.innerHTML = '';
+                const filtered = window.BPSCData.biharProverbs.filter(row => {
+                    return activeTag === 'all' || (row.tags && row.tags.includes(activeTag));
                 });
+
+                if (filtered.length === 0) {
+                    proverbsGrid.innerHTML = `<div class="col-span-full text-center text-xs p-8" style="color: var(--text-tertiary);">No proverbs matches this theme.</div>`;
+                } else {
+                    filtered.forEach(row => {
+                        const div = document.createElement('div');
+                        div.className = 'card p-5 rounded-xl flex flex-col gap-2.5';
+                        
+                        const meaningText = isHi && row.meaningHi ? row.meaningHi : row.meaningEn;
+                        const contextText = isHi && row.essayContextHi ? row.essayContextHi : row.essayContext;
+                        
+                        div.innerHTML = `
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-accent">${row.proverbHi}</span>
+                                <span class="text-xs italic" style="color: var(--text-tertiary);">${row.proverbEn}</span>
+                            </div>
+                            <div class="text-xs leading-relaxed" style="color: var(--text-primary);">
+                                <strong>${meaningLabel}:</strong> ${meaningText}
+                            </div>
+                            <div class="text-xs leading-relaxed" style="color: var(--text-secondary);">
+                                <strong>${contextLabel}:</strong> ${contextText}
+                            </div>
+                        `;
+                        proverbsGrid.appendChild(div);
+                    });
+                }
             }
         }
 

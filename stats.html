@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPSC 101 — GS-1 Statistics Masterclass</title>
+
+    <!-- FOUC Prevention -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('bpsc_theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind CDN for layout only -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            corePlugins: {
+                preflight: true,
+            }
+        }
+    </script>
+
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="css/styles.css?v=4.0">
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: var(--bg-page); color: var(--text-primary);">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Layout Wrapper: Sidebar + Content -->
+    <div class="flex-grow flex flex-row w-full max-w-7xl mx-auto relative">
+        <!-- Sidebar -->
+        <aside id="sidebar-container" class="bpsc-sidebar-aside"></aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow min-w-0">
+            <!-- Main Content -->
+            <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full flex flex-col gap-10">
+
+                <!-- 1. HERO SECTION -->
+                <section class="text-center sm:text-left flex flex-col gap-3">
+                    <h1 class="text-4xl sm:text-5xl font-bold" style="color: var(--text-primary);" data-i18n="statsTitle">GS-1 Statistics Masterclass (72/72 Guide)</h1>
+                    <p class="text-lg sm:text-xl" style="color: var(--text-secondary);" data-i18n="statsDesc">A comprehensive strategic blueprint to secure a perfect score in BPSC GS-1 Section III (Data Interpretation).</p>
+                </section>
+
+                <!-- 2. CORE MINDSET & SCORING MECHANICS -->
+                <section id="stats-mindset" class="scroll-mt-16 card p-6 rounded-xl flex flex-col gap-3" style="border-left: 4px solid var(--accent);">
+                    <h2 class="text-xl font-bold text-accent animate-fade-in" data-i18n="statsMindsetTitle">💡 Core Mindset & Scoring Mechanics</h2>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-primary);" data-i18n="statsMindsetBody">
+                        Subjective evaluation in GS-1 varies, but Statistics is purely mathematical. Scoring 72/72 builds an unbeatable lead over competitors.
+                    </p>
+                </section>
+
+                <!-- 3. EXAM FORMAT & MARK DISTRIBUTION -->
+                <section id="stats-format" class="scroll-mt-16 card p-6 rounded-xl flex flex-col gap-4">
+                    <h2 class="text-xl font-bold" style="color: var(--text-primary);" data-i18n="statsFormatTitle">📝 Exam Format & Mark Distribution</h2>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);" data-i18n="statsFormatBody">
+                        Candidates must solve 2 out of 4 long Data Interpretation questions (36 marks each) in GS Paper 1 Section III. Recommended duration is 40-45 minutes.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                        <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Total Questions</span>
+                            <span class="text-xl font-bold text-accent">4 Qs (Solve 2)</span>
+                        </div>
+                        <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Total Weightage</span>
+                            <span class="text-xl font-bold text-accent">72 / 300 Marks</span>
+                        </div>
+                        <div class="p-4 rounded-xl flex flex-col justify-center items-center text-center" style="background-color: var(--bg-page); border: 1px solid var(--border);">
+                            <span class="text-xs mb-1" style="color: var(--text-secondary);">Time Recommended</span>
+                            <span class="text-xl font-bold text-accent">40 - 45 Minutes</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. TECHNICAL CURRICULUM -->
+                <section id="stats-curriculum" class="scroll-mt-16 flex flex-col gap-4">
+                    <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="statsCurriculumTitle">🎓 Technical Curriculum (What to Master)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Data Types -->
+                        <div class="card p-5 rounded-xl flex flex-col gap-3">
+                            <h3 class="font-bold text-accent" style="font-size: 1.05rem;">📊 Data Representation Types</h3>
+                            <ul class="list-disc pl-5 flex flex-col gap-2 text-xs" style="color: var(--text-primary);">
+                                <li><strong>Line Graphs & Time Series:</strong> Identifying trends across periods, points of inflection.</li>
+                                <li><strong>Bar Charts:</strong> Simple, Stacked, and Grouped representations comparing multiple dimensions.</li>
+                                <li><strong>Pie Charts:</strong> Single & Dual Pie charts, Angle-to-Percentage conversion ($\text{Value} = \frac{\theta}{360} \times \text{Total}$).</li>
+                                <li><strong>Tabular Data:</strong> Reading complex multi-column matrix tables accurately without misalignment.</li>
+                                <li><strong>Mixed Diagrams:</strong> Combos of Pie Chart + Table, or Line Graph + Bar Chart.</li>
+                            </ul>
+                        </div>
+                        <!-- Core Math Concepts -->
+                        <div class="card p-5 rounded-xl flex flex-col gap-3">
+                            <h3 class="font-bold text-accent" style="font-size: 1.05rem;">🧮 Mathematical Core Concepts</h3>
+                            <ul class="list-disc pl-5 flex flex-col gap-2 text-xs" style="color: var(--text-primary);">
+                                <li><strong>Percentages:</strong> Net change, Percentage Increase/Decrease ($\frac{\text{Diff}}{\text{Original}} \times 100$).</li>
+                                <li><strong>Ratio & Proportion:</strong> Share division, standard simplifications, cross-comparisons.</li>
+                                <li><strong>Averages:</strong> Simple averages and Weighted averages ($\frac{\sum w_i x_i}{\sum w_i}$).</li>
+                                <li><strong>Business Math:</strong> Profit & loss percentages, cost price, selling price, and profit margins.</li>
+                                <li><strong>Growth Rates:</strong> CAGR vs. Simple annual growth rate (SARG) analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. STEP-BY-STEP EXECUTION PLAN -->
+                <section id="stats-execution" class="scroll-mt-16 flex flex-col gap-4">
+                    <h2 class="text-2xl font-bold" style="color: var(--text-primary);" data-i18n="statsExecutionTitle">⚡ Step-by-Step Execution Plan</h2>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="card p-4 rounded-xl flex items-start gap-4">
+                            <span class="font-bold text-lg text-accent">1</span>
+                            <div>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Rigorous Calculation Standards</h3>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody1">Show every intermediate step. Direct answers without calculation steps lose marks.</p>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody2">Standardize units (e.g., converting Crores, Lakhs, Metric Tonnes accurately).</p>
+                            </div>
+                        </div>
+                        <div class="card p-4 rounded-xl flex items-start gap-4">
+                            <span class="font-bold text-lg text-accent">2</span>
+                            <div>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Question Selection Strategy</h3>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody3">Spend the first 2 minutes scanning all 4 questions. Pick questions with simple arithmetic calculations and clear data over ambiguous graph readings.</p>
+                            </div>
+                        </div>
+                        <div class="card p-4 rounded-xl flex items-start gap-4">
+                            <span class="font-bold text-lg text-accent">3</span>
+                            <div>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Clean Visual Presentation</h3>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody4">Draw neat tables for calculated data before answering sub-questions.</p>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody5">Clearly highlight final answers in boxed sub-headings.</p>
+                            </div>
+                        </div>
+                        <div class="card p-4 rounded-xl flex items-start gap-4">
+                            <span class="font-bold text-lg text-accent">4</span>
+                            <div>
+                                <h3 class="font-semibold text-sm" style="color: var(--text-primary);">Tool & PYQ Mastery Stack</h3>
+                                <p class="text-xs mt-1" style="color: var(--text-secondary);" data-i18n="statsExecutionBody6">Practice past 10–15 years of BPSC Statistics PYQs under timed conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <div id="footer-container"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js?v=4.0"></script>
+    <script src="js/navbar.js?v=4.0"></script>
+    <script>
+        function renderPageContent() {
+            // Stats page is static content rendered via data-i18n, but if custom triggers are needed they can be defined here.
+        }
+    </script>
+</body>
+</html>
